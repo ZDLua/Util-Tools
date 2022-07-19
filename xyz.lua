@@ -81,7 +81,7 @@ util.tween = function(object, properties, time, easing, speed)
     end)
 end
 
-util.makeEsp = function(part, textcolor, text , font)
+util.makeEsp = function(part, textcolor, size,  text , font)
 
     local BillboardGui = util.create("BillboardGui", {
         Active = true,
@@ -100,7 +100,7 @@ util.makeEsp = function(part, textcolor, text , font)
         Font = Enum.Font[font],
         TextXAlignment = Enum.TextXAlignment.Left,
         TextYAlignment = Enum.TextYAlignment.Top,
-        Size = UDim2.new(1, 0, 1, 0),
+        Size = size,
         Position = UDim2.new(0, 0, 0, 0)
     }, "TextLabel", BillboardGui)
 
@@ -117,7 +117,8 @@ util.makeEsp = function(part, textcolor, text , font)
     end)
 
 
-    
 end
+
+
 
 return util

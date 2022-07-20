@@ -146,6 +146,22 @@ util.makeEsp = function(part, textcolor, size,  text , font, options)
 end
 
 
+util.makeCircle = function(size, color , radius) 
+    local screen = util.create("ScreenGui", {
+        Parent = game.Players.LocalPlayer.PlayerGui,
+        ResetOnSpawn = false
+    }, "Circle")
+    local circle = util.create("ImageLabel", {
+        BackgroundTransparency = 1,
+        Image = "rbxassetid://" .. "2624589904",
+        ImageColor3 = color,
+        ImageTransparency = 0.5,
+        Position = UDim2.new(0.5, 0, 0.5, 0),
+        Size = UDim2.new(0, size, 0, size),
+        ZIndex = 2
+    }, "Circle", screen)
+end
+
 
 
 

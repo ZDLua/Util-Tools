@@ -105,6 +105,11 @@ util.makeEsp = function(part, textcolor, textsize, size,  text , font, options)
 		Position = UDim2.new(0, 0, 0, 0)
 	}, "TextLabel", BillboardGui)
 
+	
+	if not font then
+		TextLabel.Font = Enum.Font.SourceSans
+	end
+
 
 	local function getPlayerDistance(part)
 		local p1 = part.CFrame.p

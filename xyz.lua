@@ -140,14 +140,33 @@ util.makeEsp = function(part, textcolor, size,  text , font, options)
                 wait()
             end
         end
+        if options['fade'] == true then
+        
+            for i = 0, 1, .025 do
+                wait(.02)
+               
+                TextLabel.TextStrokeTransparency = i
+                TextLabel.TextTransparency = i
+                -- fade
+                if i < .5 then
+                    TextLabel.TextSize = math.random(20,30)
+                else
+                    TextLabel.TextSize = math.random(20,30)
+                end
+
+                wait()
+            end
+        end
 	end)
 
-
+    return BillboardGui
 end
 
-
-
-
+util.rejoinGame = function()
+    local teleport = game:GetService("TeleportService")
+    local player = game.Players.LocalPlayer
+    teleport:Teleport(game.PlaceId, player)
+end
 
 
 return util

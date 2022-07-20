@@ -1,4 +1,6 @@
+
 local util = {}
+util.teams = game:GetService("Teams"):GetTeams()
 
 util.create = function(instance, properties , name, parent)
 	local object = Instance.new(instance)
@@ -150,8 +152,10 @@ util.makeEsp = function(part, textcolor, textsize, size,  text , font, options)
                 wait()
             end
         end
-
-       
+		
+		if options['teambased'] == true then
+			TextLabel.TextColor3 = part.Parent.TeamColor
+		end
 	end)
 
     if part:FindFirstChild("Esp") == true then

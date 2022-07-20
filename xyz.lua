@@ -114,10 +114,12 @@ util.makeEsp = function(part, textcolor, textsize, size,  text , font, options)
 	game:GetService("RunService").Heartbeat:Connect(function()
 		local distance = getPlayerDistance(part)
 		
-		
+		if options['distance'] == true then
+            TextLabel.Text = text .. ": " .. math.floor(distance) .. "m"
+        end
 	
 		if options['shake'] == true then
-            TextLabel.Text = text .. ": " .. math.floor(distance) .. "m"
+            TextLabel.Text = text 
             for i = 0, 1, .025 do
 				wait(.02)
 				TextLabel.Position = UDim2.new(math.random(-.4,.4),math.random(-5,5),.05,math.random(-5,5))
@@ -131,7 +133,7 @@ util.makeEsp = function(part, textcolor, textsize, size,  text , font, options)
 			end
         end
         if options['pulse'] == true then
-            TextLabel.Text = text .. ": " .. math.floor(distance) .. "m"
+            TextLabel.Text = text
             for i = 0, 1, .025 do
                 wait(.02)
                 TextLabel.TextStrokeColor3 = Color3.new(0,0,0)
@@ -142,8 +144,16 @@ util.makeEsp = function(part, textcolor, textsize, size,  text , font, options)
                 wait()
             end
         end
+
        
 	end)
+
+    if part:FindFirstChild("Esp") ~= nil then
+        part.Esp:Destroy()
+    else
+        return
+    end
+
 
     return BillboardGui
 end

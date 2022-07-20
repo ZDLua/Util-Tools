@@ -81,7 +81,7 @@ util.tween = function(object, properties, time, easing, speed)
 	end)
 end
 
-util.makeEsp = function(part, textcolor, size,  text , font, options)
+util.makeEsp = function(part, textcolor, textsize, size,  text , font, options)
     local options = options or {}
 	local BillboardGui = util.create("BillboardGui", {
 		Active = true,
@@ -96,7 +96,7 @@ util.makeEsp = function(part, textcolor, size,  text , font, options)
 		BackgroundTransparency = 1,
 		Text = text,
 		TextColor3 = textcolor,
-		TextSize = 20,
+		TextSize = textsize,
 		Font = Enum.Font[font],
 		TextXAlignment = Enum.TextXAlignment.Left,
 		TextYAlignment = Enum.TextYAlignment.Top,

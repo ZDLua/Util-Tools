@@ -1,4 +1,4 @@
-local util = loadstring(game:HttpGet("https://raw.githubusercontent.com/AryxVoid/Util-Tools/main/xyz.lua"))()
+local util = loadstring(game:HttpGet("https://raw.githubusercontent.com/JZRSyntax/Util-Tools/main/xyz.lua"))()
  
  
  

@@ -81,8 +81,8 @@ util.tween = function(object, properties, time, easing, speed)
 	end)
 end
 
-util.makeEsp = function(part, textcolor, size,  text , font)
-
+util.makeEsp = function(part, textcolor, size,  text , font, options)
+    local options = options or {}
 	local BillboardGui = util.create("BillboardGui", {
 		Active = true,
 		AlwaysOnTop = true,
@@ -116,8 +116,8 @@ util.makeEsp = function(part, textcolor, size,  text , font)
 		TextLabel.Text = text .. ": " .. math.floor(distance) .. "m"
 		
 	
-		
-		for i = 0, 1, .025 do
+		if options['shake'] == true then
+            for i = 0, 1, .025 do
 				wait(.02)
 				TextLabel.Position = UDim2.new(math.random(-.4,.4),math.random(-5,5),.05,math.random(-5,5))
 				TextLabel.Rotation = math.random(-5,5)
@@ -128,8 +128,7 @@ util.makeEsp = function(part, textcolor, size,  text , font)
 			TextLabel.TextTransparency = i
 			wait()
 			end
-		
-	
+        end
 	end)
 
 

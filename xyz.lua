@@ -74,6 +74,7 @@ util.addDrag = function(object)
 end
 
 util.tween = function(object, properties, time, easing, speed)
+	local TweenService = game:GetService("TweenService")
 	local tween = TweenService:Create(object, easing, properties)
 	tween:Play()
 	tween.Completed:Connect(function()

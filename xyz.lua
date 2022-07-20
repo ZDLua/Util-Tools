@@ -121,7 +121,7 @@ util.makeEsp = function(part, textcolor, size,  text , font)
 				wait(.02)
 				TextLabel.Position = UDim2.new(math.random(-.4,.4),math.random(-5,5),.05,math.random(-5,5))
 				TextLabel.Rotation = math.random(-5,5)
-				TextLabel.TextColor3 = Color3.new(255,0,0)
+				
 				TextLabel.TextStrokeColor3 = Color3.new(0,0,0)
 			BillboardGui.ExtentsOffset = Vector3.new(math.random(-i, i), math.random(-i, i), math.random(-i, i))
 			TextLabel.TextStrokeTransparency = i
@@ -134,6 +134,8 @@ util.makeEsp = function(part, textcolor, size,  text , font)
 
 
 end
+
+
 
 
 

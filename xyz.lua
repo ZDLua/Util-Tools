@@ -129,6 +129,17 @@ util.makeEsp = function(part, textcolor, size,  text , font, options)
 			wait()
 			end
         end
+        if options['pulse'] == true then
+            for i = 0, 1, .025 do
+                wait(.02)
+                TextLabel.TextStrokeColor3 = Color3.new(0,0,0)
+                BillboardGui.ExtentsOffset = Vector3.new(math.random(-i, i), math.random(-i, i), math.random(-i, i))
+                TextLabel.TextStrokeTransparency = i
+                TextLabel.TextTransparency = i
+                TextLabel.TextSize = math.random(20,30)
+                wait()
+            end
+        end
 	end)
 
 

@@ -147,12 +147,8 @@ util.makeEsp = function(part, textcolor, size,  text , font, options)
                
                 TextLabel.TextStrokeTransparency = i
                 TextLabel.TextTransparency = i
-                -- fade
-                if i < .5 then
-                    TextLabel.TextSize = math.random(20,30)
-                else
-                    TextLabel.TextSize = math.random(20,30)
-                end
+                
+
 
                 wait()
             end

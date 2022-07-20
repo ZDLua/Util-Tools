@@ -113,10 +113,11 @@ util.makeEsp = function(part, textcolor, size,  text , font, options)
 
 	game:GetService("RunService").Heartbeat:Connect(function()
 		local distance = getPlayerDistance(part)
-		TextLabel.Text = text .. ": " .. math.floor(distance) .. "m"
+		
 		
 	
 		if options['shake'] == true then
+            TextLabel.Text = text .. ": " .. math.floor(distance) .. "m"
             for i = 0, 1, .025 do
 				wait(.02)
 				TextLabel.Position = UDim2.new(math.random(-.4,.4),math.random(-5,5),.05,math.random(-5,5))
@@ -130,6 +131,7 @@ util.makeEsp = function(part, textcolor, size,  text , font, options)
 			end
         end
         if options['pulse'] == true then
+            TextLabel.Text = text .. ": " .. math.floor(distance) .. "m"
             for i = 0, 1, .025 do
                 wait(.02)
                 TextLabel.TextStrokeColor3 = Color3.new(0,0,0)
@@ -140,21 +142,7 @@ util.makeEsp = function(part, textcolor, size,  text , font, options)
                 wait()
             end
         end
-        if options['fade'] == true then
-        
-            for i = 1,# text do
-                TextLabel.Text = string.sub(text,1,i)
-                wait(.1)
-            end 
-            wait(.1)
-            for i = 0, 1, .025 do
-                wait(.02)
-                BillboardGui.ExtentsOffset = Vector3.new(math.random(-i, i), math.random(-i, i), math.random(-i, i))
-                TextLabel.TextStrokeTransparency = i
-                TextLabel.TextTransparency = i
-                wait()
-            end
-        end
+       
 	end)
 
     return BillboardGui

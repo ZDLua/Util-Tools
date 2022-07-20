@@ -148,11 +148,6 @@ util.makeEsp = function(part, textcolor, textsize, size,  text , font, options)
        
 	end)
 
-    if part:FindFirstChild("Esp") ~= nil then
-        part.Esp:Destroy()
-    else
-        return
-    end
 
 
     return BillboardGui

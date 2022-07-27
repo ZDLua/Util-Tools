@@ -2,7 +2,28 @@
 local util = {}
 util.teams = game:GetService("Teams"):GetTeams()
 
+util.await = function(promise)
+	local status, result = coroutine.resume(promise)
+	if not status then
+		error(result)
+	end
+	return result
+end
+
+util.async = function(func)
+	return coroutine.create(function()
+		local status, result = coroutine.resume(func)
+		if not status then
+			error(result)
+		end
+		return result
+	end)
+end
+
+
+
 util.create = function(instance, properties , name, parent)
+
 	local object = Instance.new(instance)
 	for i, v in pairs(properties or {}) do
 		object[i] = v
@@ -20,6 +41,7 @@ util.edit = function(object, properties)
 end
 
 util.addDrag = function(object)
+
 	local UserInputService = game:GetService("UserInputService")
 	local runService = (game:GetService("RunService"));
 
@@ -30,14 +52,15 @@ util.addDrag = function(object)
 	local dragStart
 	local startPos
 
-	function Lerp(a, b, m)
+	local function Lerp(a, b, m)
 		return a + (b - a) * m
 	end;
 
 	local lastMousePos
 	local lastGoalPos
 	local DRAG_SPEED = (8); -- // The speed of the UI darg.
-	function Update(dt)
+
+	local function Update(dt)
 		if not (startPos) then return end;
 		if not (dragging) and (lastGoalPos) then
 			gui.Position = UDim2.new(startPos.X.Scale, Lerp(gui.Position.X.Offset, lastGoalPos.X.Offset, dt * DRAG_SPEED), startPos.Y.Scale, Lerp(gui.Position.Y.Offset, lastGoalPos.Y.Offset, dt * DRAG_SPEED))
@@ -86,80 +109,89 @@ end
 
 util.makeEsp = function(part, textcolor, textsize, size,  text , font, options)
     local options = options or {}
-	local BillboardGui = util.create("BillboardGui", {
-		Active = true,
-		AlwaysOnTop = true,
-		ExtentsOffset = Vector3.new(0, 3, 0),
-		LightInfluence = 2.000,
-		Size = UDim2.new(0, 200, 0, 50),
-		ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-	}, "Esp", part)
-
-	local TextLabel = util.create("TextLabel", {
-		BackgroundTransparency = 1,
-		Text = text,
-		TextColor3 = textcolor,
-		TextSize = textsize,
-		Font = Enum.Font[font],
-		TextXAlignment = Enum.TextXAlignment.Left,
-		TextYAlignment = Enum.TextYAlignment.Top,
-		Size = size,
-		Position = UDim2.new(0, 0, 0, 0)
-	}, "TextLabel", BillboardGui)
-
+	local BillboardGui ; 
+	local function create()
+		 BillboardGui = util.create("BillboardGui", {
+			Active = true,
+			AlwaysOnTop = true,
+			ExtentsOffset = Vector3.new(0, 3, 0),
+			LightInfluence = 2.000,
+			Size = UDim2.new(0, 200, 0, 50),
+			ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+		}, "Esp", part)
 	
-	if not font then
-		TextLabel.Font = Enum.Font.SourceSans
-	end
-
-
-	local function getPlayerDistance(part)
-		local p1 = part.CFrame.p
-		local p2 = game.Players.LocalPlayer.Character.Head.CFrame.p
-		return (p1 - p2).magnitude
-	end
-
-	game:GetService("RunService").Heartbeat:Connect(function()
-		local distance = getPlayerDistance(part)
-		
-		if options['distance'] == true then
-            TextLabel.Text = text .. ": " .. math.floor(distance) .. "m"
-        end
+		local TextLabel = util.create("TextLabel", {
+			BackgroundTransparency = 1,
+			Text = text,
+			TextColor3 = textcolor,
+			TextSize = textsize,
+			Font = Enum.Font[font],
+			TextXAlignment = Enum.TextXAlignment.Left,
+			TextYAlignment = Enum.TextYAlignment.Top,
+			Size = size,
+			Position = UDim2.new(0, 0, 0, 0)
+		}, "TextLabel", BillboardGui)
 	
-		if options['shake'] == true then
-            TextLabel.Text = text 
-            for i = 0, 1, .025 do
-				wait(.02)
-				TextLabel.Position = UDim2.new(math.random(-.4,.4),math.random(-5,5),.05,math.random(-5,5))
-				TextLabel.Rotation = math.random(-5,5)
-				
-				TextLabel.TextStrokeColor3 = Color3.new(0,0,0)
-			BillboardGui.ExtentsOffset = Vector3.new(math.random(-i, i), math.random(-i, i), math.random(-i, i))
-			TextLabel.TextStrokeTransparency = i
-			TextLabel.TextTransparency = i
-			wait()
-			end
-        end
-        if options['pulse'] == true then
-            TextLabel.Text = text
-            for i = 0, 1, .025 do
-                wait(.02)
-                TextLabel.TextStrokeColor3 = Color3.new(0,0,0)
-                BillboardGui.ExtentsOffset = Vector3.new(math.random(-i, i), math.random(-i, i), math.random(-i, i))
-                TextLabel.TextStrokeTransparency = i
-                TextLabel.TextTransparency = i
-                TextLabel.TextSize = math.random(20,30)
-                wait()
-            end
-        end
 		
-		if options['teambased'] == true then
-			TextLabel.TextColor3 = part.Parent.TeamColor
+		if not font then
+			TextLabel.Font = Enum.Font.SourceSans
 		end
+	
+	
+		local function getPlayerDistance(part)
+			local p1 = part.CFrame.p
+			local p2 = game.Players.LocalPlayer.Character.Head.CFrame.p
+			return (p1 - p2).magnitude
+		end
+	
+		game:GetService("RunService").Heartbeat:Connect(function()
+			local distance = getPlayerDistance(part)
+			
+			if options['distance'] == true then
+				TextLabel.Text = text .. ": " .. math.floor(distance) .. "m"
+			end
+		
+			if options['shake'] == true then
+				TextLabel.Text = text 
+				for i = 0, 1, .025 do
+					task.wait(.02)
+					TextLabel.Position = UDim2.new(math.random(-.4,.4),math.random(-5,5),.05,math.random(-5,5))
+					TextLabel.Rotation = math.random(-5,5)
+					
+					TextLabel.TextStrokeColor3 = Color3.new(0,0,0)
+				BillboardGui.ExtentsOffset = Vector3.new(math.random(-i, i), math.random(-i, i), math.random(-i, i))
+				TextLabel.TextStrokeTransparency = i
+				TextLabel.TextTransparency = i
+				task.wait()
+				end
+			end
+			if options['pulse'] == true then
+				TextLabel.Text = text
+				for i = 0, 1, .025 do
+					task.wait(.02)
+					TextLabel.TextStrokeColor3 = Color3.new(0,0,0)
+					BillboardGui.ExtentsOffset = Vector3.new(math.random(-i, i), math.random(-i, i), math.random(-i, i))
+					TextLabel.TextStrokeTransparency = i
+					TextLabel.TextTransparency = i
+					TextLabel.TextSize = math.random(20,30)
+				   task.wait()
+				end
+			end
+			
+			if options['teambased'] == true then
+				TextLabel.TextColor3 = part.Parent.TeamColor
+			end
+		end)
+	end
+	
+	util.await(function()
+		create()
 	end)
 
     if part:FindFirstChild("Esp") == true then
         part.Esp:Destroy()
+		task.wait(1)
+		create()
     else
         return
     end
@@ -169,15 +201,18 @@ util.makeEsp = function(part, textcolor, textsize, size,  text , font, options)
 end
 
 util.rejoinGame = function()
-    local teleport = game:GetService("TeleportService")
-    local player = game.Players.LocalPlayer
-    teleport:Teleport(game.PlaceId, player)
+	util.atask.wait(coroutine.create(function()
+		local teleport = game:GetService("TeleportService")
+		local player = game.Players.LocalPlayer
+
+		if game.GameId == nil then
+			return false
+		end
+
+		teleport:Teleport(game.PlaceId, player)
+		return true
+	end))
 end
 
-util.serverhop = function()
-	local module = loadstring(game:HttpGet"https://raw.githubusercontent.com/LeoKholYt/roblox/main/lk_serverhop.lua")()
-
-	module:Teleport(game.PlaceId)		
-end
 
 return util

@@ -1,14 +1,7 @@
-
 local util = {}
 util.teams = game:GetService("Teams"):GetTeams()
 
-util.await = function(promise)
-	local status, result = coroutine.resume(promise)
-	if not status then
-		error(result)
-	end
-	return result
-end
+
 
 util.async = function(func)
 	return coroutine.create(function()
@@ -184,9 +177,9 @@ util.makeEsp = function(part, textcolor, textsize, size,  text , font, options)
 		end)
 	end
 	
-	util.await(function()
+	
 		create()
-	end)
+
 
     if part:FindFirstChild("Esp") == true then
         part.Esp:Destroy()
@@ -213,8 +206,3 @@ util.rejoinGame = function()
 		return true
 	end))
 end
-
-
-
-
-return util

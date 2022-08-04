@@ -1,6 +1,8 @@
 local util = {}
 util.teams = game:GetService("Teams"):GetTeams()
-
+local Player = game.Players.LocalPlayer;
+Hum = Player.Character.Humanoid
+local HumanoidRootPart = Player.Character.HumanoidRootPart;
 
 
 util.async = function(func)
@@ -13,6 +15,9 @@ util.async = function(func)
 	end)
 end
 
+util.teleportTo = function(pos)
+    HumanoidRootPart.CFrame = pos.CFrame + Vector3.new(_G.farmdistance, 2, 2)
+end
 
 
 util.create = function(instance, properties , name, parent)

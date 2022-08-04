@@ -206,3 +206,5 @@ util.rejoinGame = function()
 		return true
 	end))
 end
+
+return util

@@ -19,6 +19,13 @@ util.teleportTo = function(pos)
     HumanoidRootPart.CFrame = pos.CFrame + Vector3.new(_G.farmdistance, 2, 2)
 end
 
+util.bounce = function(time, pos) -- tiny tween
+    game:GetService("TweenService"):Create(HumanoidRootPart,
+        TweenInfo.new(time, Enum.EasingStyle.Bounce), {
+            CFrame = pos + Vector3.new(_G.farmdistance, 2, 2)
+        }):Play()
+    task.wait(time)
+end
 
 util.create = function(instance, properties , name, parent)
 

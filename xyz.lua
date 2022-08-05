@@ -23,6 +23,91 @@ util.protect = function(obj)
 	end
 end
 
+util.chat = function(string, options)
+    local options = options or {}
+    if options.private == true then
+        local A_1 = "/w "..options['player'].." "..string
+        local A_2 = "All"
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(A_1, A_2)
+    end
+    if options.public == true then
+        local A_1 = string
+        local A_2 = "All"
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(A_1, A_2)
+    end
+end
+
+util.obfuscateNameGen = function(text, options)
+    local text = text or ""
+    local options = options or {}
+    if options.reverse == true then
+        text = string.reverse(text)
+    end
+    if options.bytecode == true then
+        text = string.gsub(text, ".", function(c)
+            return string.char(string.byte(c) + 1)
+        end)
+    end
+    if options.uppercase == true then
+        text = string.upper(text)
+    end
+    if options.lowercase == true then
+        text = string.lower(text)
+    end
+    if options.capitalize == true then
+        text = string.gsub(text, "%w+", function(c)
+            return string.upper(c)
+        end)
+    end
+    if options.hex == true then
+        text = string.gsub(text, ".", function(c)
+            return string.format("%02X", string.byte(c))
+        end)
+    end
+    if options.emoji == true then
+        text = string.gsub(text, ".", function(c)
+            return string.format("%04X", string.byte(c))
+        end)
+    end
+    if options.bypass == true then
+        -- try to make a bypassed name
+        text = string.gsub(text, ".", function(c)
+            return string.format("%02X", string.byte(c))
+        end)
+        -- if string can't be bypassed, then just obfuscate it
+        if string.len(text) > 20 then
+            text = string.gsub(text, ".", function(c)
+                return string.format("%02X", string.byte(c))
+            end)
+        end
+        -- if bypassed string is too long then make it shorter
+        if string.len(text) > 20 then
+            text = string.sub(text, 1, 20)
+        end
+        -- and if bypassed string tags ingame then make a new type of bypassed name, and then obfuscate it, and then deobfuscate it
+        if string.find(text, " ") then
+            text = string.gsub(text, ".", function(c)
+                return string.format("%02X", string.byte(c))
+            end)
+        end
+        -- if bypassed string is not in hex then make it hex
+        if string.find(text, "%w") then
+            text = string.gsub(text, ".", function(c)
+                return string.format("%02X", string.byte(c))
+            end)
+        end
+    end
+    if options.deobfuscate == true then
+        text = string.gsub(text, "(%x%x)", function(c)
+            return string.char(tonumber(c, 16) - 1)
+        end)
+    end
+
+    
+    
+    return text
+end
+
 util.teleportTo = function(pos)
     HumanoidRootPart.CFrame = pos.CFrame + Vector3.new(_G.farmdistance, 2, 2)
 end

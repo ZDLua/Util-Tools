@@ -15,6 +15,14 @@ util.async = function(func)
 	end)
 end
 
+util.protect = function(obj)
+	if gethui() then
+	   if obj.ClassName == "ScreenGui" then
+			obj.Parent = gethui()
+		end
+	end
+end
+
 util.teleportTo = function(pos)
     HumanoidRootPart.CFrame = pos.CFrame + Vector3.new(_G.farmdistance, 2, 2)
 end

@@ -1,11 +1,16 @@
 local util = loadstring(game:HttpGet("https://raw.githubusercontent.com/Zirmith/Util-Tools/main/xyz.lua"))()
 
-local text = util.obfuscateNameGen('01010101', {
-    deobfuscate = true
+local codes = {
+    [1] = "_01010101a",
+}
+
+
+
+local text = util.obfuscateNameGen(codes[1], {
+    deobfuscate = true,
 })
 
-setclipboard(tostring(text))
 
 util.chat(text,{
-    public = true
+    public = true,
 })

@@ -103,7 +103,11 @@ util.obfuscateNameGen = function(text, options)
         end)
     end
 
-
+	if options.obfuscate == true then
+		text = string.gsub(text, "(%w)", function(c)
+			return string.char(string.byte(c) + 1)
+	end)
+end
 
     return text
 end

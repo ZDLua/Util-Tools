@@ -44,9 +44,7 @@ util.obfuscateNameGen = function(text, options)
         text = string.reverse(text)
     end
     if options.bytecode == true then
-        text = string.gsub(text, ".", function(c)
-            return string.char(string.byte(c) + 1)
-        end)
+	text = string:gsub(".", function(incode) return "\\" .. incode:byte () end) or text .."\\\""
     end
     if options.uppercase == true then
         text = string.upper(text)

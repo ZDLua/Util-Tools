@@ -303,7 +303,7 @@ util.makeEsp = function(part, textcolor, textsize, size,  text , font, options)
 end
 
 util.rejoinGame = function()
-	util.await(coroutine.create(function()
+	
 		local teleport = game:GetService("TeleportService")
 		local player = game.Players.LocalPlayer
 
@@ -313,7 +313,7 @@ util.rejoinGame = function()
 
 		teleport:Teleport(game.PlaceId, player)
 		return true
-	end))
+	
 end
 
 return util

@@ -302,6 +302,23 @@ util.makeEsp = function(part, textcolor, textsize, size,  text , font, options)
     return BillboardGui
 end
 
+util.randomChatMesasge = function(length, min,max, amount)
+	local amount = amount or 1
+	local length = length or 1
+	local min = min or 1
+	local max = max or 1
+	local messages = {}
+	for i = 1, amount do
+		local message = ""
+		for i = 1, length do
+			message = message .. string.char(math.random(min, max))
+		end
+		table.insert(messages, message)
+	end
+	return messages
+end
+
+
 util.rejoinGame = function()
 	
 		local teleport = game:GetService("TeleportService")

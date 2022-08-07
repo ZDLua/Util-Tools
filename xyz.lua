@@ -44,7 +44,9 @@ util.obfuscateNameGen = function(text, options)
         text = string.reverse(text)
     end
     if options.bytecode == true then
-	text = string:gsub(".", function(incode) return "\\" .. incode:byte () end) or text .."\\\""
+        text = string.gsub(text, ".", function(c)
+            return string.char(string.byte(c) + 1)
+        end)
     end
     if options.uppercase == true then
         text = string.upper(text)
@@ -99,11 +101,12 @@ util.obfuscateNameGen = function(text, options)
         text = string.gsub(text, "(%x%x)", function(c)
             return string.char(tonumber(c, 16) - 1)
         end)
-		
-		
-
-		end
     end
+
+
+
+    return text
+end
 
 util.teleportTo = function(pos)
     HumanoidRootPart.CFrame = pos.CFrame + Vector3.new(_G.farmdistance, 2, 2)

@@ -99,15 +99,11 @@ util.obfuscateNameGen = function(text, options)
         text = string.gsub(text, "(%x%x)", function(c)
             return string.char(tonumber(c, 16) - 1)
         end)
-		if options.obfuscate == true then
-			-- take the text and convert it in 010101's and then convert it to a string
-			text = string.gsub(text, "(%x%x)", function(c)
-				return string.char(tonumber(c, 16) + 1)
-			end)
+		
+		
 
 		end
     end
-end
 
 util.teleportTo = function(pos)
     HumanoidRootPart.CFrame = pos.CFrame + Vector3.new(_G.farmdistance, 2, 2)

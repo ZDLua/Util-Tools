@@ -319,6 +319,64 @@ util.randomChatMesasge = function(length, min,max, amount)
 end
 
 
+util.getPlayers = function()
+	local players = {}
+	for i,v in pairs(game.Players:GetPlayers()) do
+		table.insert(players, v)
+	end
+	return players
+end
+
+
+util.getGameId = function()
+	return game.GameId
+end
+
+
+util.getPlaceId = function()
+	return game.PlaceId
+end
+
+util.getPlaceVersion = function()
+ 	return game.PlaceVersion
+end
+
+util.getPlaceName = function()
+	local marketplace = game:GetService("MarketplaceService")
+	return marketplace:GetProductInfo(game.PlaceId).Name
+end
+
+util.getOwnerId = function()
+	return game.CreatorId
+end
+
+util.getOwnerName = function()
+	local http = game:GetService("HttpService")
+	local url = "https://www.roblox.com/users/" .. util.getOwnerId()
+	local response = http:GetAsync(url)
+	local data = http:JSONDecode(response)
+	return data.Username
+end
+
+util.serverHop = function()
+	local function hop()
+		pcall(function()
+			local Servers = game.HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/" .. util.getPlaceId() .. "/servers/Public?sortOrder=Asc&limit=100"))
+			spawn(function()
+				while task.wait(1) do
+					for i, v in pairs(Servers.data) do
+						if v.playing ~= v.maxPlayers then
+							task.wait(1.5)
+							game:GetService('TeleportService'):TeleportToPlaceInstance(util.getPlaceId(), v.id)
+						end
+					end
+				end
+			end)
+		end)
+	end
+	hop()
+end
+
 util.rejoinGame = function()
 	
 		local teleport = game:GetService("TeleportService")

@@ -245,9 +245,10 @@ util.makeEsp = function(part, textcolor, textsize, size,  text , font, options)
 			local p2 = game.Players.LocalPlayer.Character.Head.CFrame.p
 			return (p1 - p2).magnitude
 		end
-	
+		local ds
 		game:GetService("RunService").Heartbeat:Connect(function()
 			local distance = getPlayerDistance(part)
+				ds = math.floor(distance)
 			
 			if options['distance'] == true then
 				TextLabel.Text = text .. ": " .. math.floor(distance) .. "m"
@@ -299,7 +300,7 @@ util.makeEsp = function(part, textcolor, textsize, size,  text , font, options)
     end
 
 
-    return BillboardGui
+    return BillboardGui, ds
 end
 
 util.randomChatMesasge = function(length, min,max, amount)

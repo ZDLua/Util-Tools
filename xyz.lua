@@ -16,7 +16,7 @@ util.async = function(func)
 end
 
 
-util.fireproximityprompt = util.async(function(Obj, Amount, Skip)
+util.fireproximityprompt = function(Obj, Amount, Skip)
  if Obj.ClassName == "ProximityPrompt" then 
         Amount = Amount or 1
         local PromptTime = Obj.HoldDuration
@@ -34,7 +34,7 @@ util.fireproximityprompt = util.async(function(Obj, Amount, Skip)
     else 
         error("userdata<ProximityPrompt> expected")
     end
-end)
+end
 
 util.protect = function(obj)
 	if gethui() then

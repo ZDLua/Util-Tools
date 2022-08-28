@@ -137,6 +137,23 @@ util.teleportTo = function(pos)
     HumanoidRootPart.CFrame = pos.CFrame + Vector3.new(_G.farmdistance, 2, 2)
 end
 
+util.tween = function(time, pos) -- Regular tween
+    game:GetService("TweenService"):Create(HumanoidRootPart,
+        TweenInfo.new(time, Enum.EasingStyle.Quart), {
+            CFrame = pos + Vector3.new(_G.farmdistance, 2, 2)
+        }):Play()
+    task.wait(time)
+end
+
+util.warp = function(time, pos) -- tiny tween
+    game:GetService("TweenService"):Create(HumanoidRootPart,
+        TweenInfo.new(time, Enum.EasingStyle.Elastic, Enum.EasingDirection.In), {
+            CFrame = pos + Vector3.new(_G.farmdistance, 2, 2)
+        }):Play()
+    task.wait(time)
+end
+
+
 util.bounce = function(time, pos) -- tiny tween
     game:GetService("TweenService"):Create(HumanoidRootPart,
         TweenInfo.new(time, Enum.EasingStyle.Bounce), {

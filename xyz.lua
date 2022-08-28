@@ -1,8 +1,5 @@
 local util = {}
 util.teams = game:GetService("Teams"):GetTeams()
-local Player = game.Players.LocalPlayer;
-Hum = Player.Character.Humanoid
-local HumanoidRootPart = Player.Character.HumanoidRootPart;
 
 
 util.async = function(func)

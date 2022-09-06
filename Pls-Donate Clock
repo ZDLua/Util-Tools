@@ -1,0 +1,55 @@
+G_key = "pJjY60XsFe6TZ0ejvtQG7c6tYIE=" -- remote name it's different for each player
+G_what = "booth" -- or sign
+
+function getDay()
+    curTime = os.time();
+	return os.date('%A', curTime)
+end
+
+function getTime()
+    local TIME_ZONE = 19 -- cst is 19 est is 20 -- to find yours just mess with it
+	local date = os.date("!*t")
+	local hour = (date.hour + TIME_ZONE) % 24
+	local ampm = hour < 12 and "AM" or "PM"
+	local timestamp = string.format("%02i:%02i %s", ((hour - 1) % 12) + 1, date.min," : "..date.sec.." | ".. ampm)
+    return timestamp
+end
+
+local args2 = {
+[1] =  "<font color=\"rgb(255,20,20)\">Live CST Clock</font> Welcome back today is a " .. "\n <font color=\"rgb(20,255,20)\">"..getDay().. "</font>",
+[2] = G_what
+}
+
+local args3 = {
+[1] =  "<font color=\"rgb(255,20,20)\">Live CST Clock</font> Loading CST Clock... " .. "\n <font color=\"rgb(20,255,20)\">Please wait</font>",
+[2] = G_what
+}
+
+function startClock() 
+local args = {
+[1] =  "<font color=\"rgb(255,20,20)\">Live CST Clock</font>  The Time is currently " .. "\n <font color=\"rgb(20,255,20)\">"..getTime().. "</font>",
+[2] = G_what
+}
+
+game:GetService("ReplicatedStorage").Remotes[G_key]:FireServer(unpack(args))
+end
+
+
+game:GetService("ReplicatedStorage").Remotes[G_key]:FireServer(unpack(args2))
+wait(1.5)
+game:GetService("ReplicatedStorage").Remotes[G_key]:FireServer(unpack(args3))
+wait(2.1)
+
+while true do
+startClock()
+wait(.01)
+end
+
+
+
+
+
+
+
+
+

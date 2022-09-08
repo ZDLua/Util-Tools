@@ -1191,7 +1191,18 @@ util.createKeyStrokes = function()
       
           runService.Heartbeat:Connect(Update)
       end
-      
+		
+keyCodeToString = function(keyCode)
+	if keyCode.Value < 127 and keyCode.Value > 33 then --// excluding space (32) character
+		return string.char(keyCode.Value)
+	else
+		return keyCode.Name --// just return keycode name if not within range
+	end
+end
+  wkey.Text = keyCodeToString(getgenv().k1)
+  akey.Text = keyCodeToString(getgenv().k2)
+  skey.Text =  keyCodeToString(getgenv().k3)
+  dkey.Text =  keyCodeToString(getgenv().k4)
       
       addDrag(script.Parent.Main)
   end

@@ -178,7 +178,12 @@ util.edit = function(object, properties)
 end
 
 util.createKeyStrokes = function()
-    local ScreenGui = Instance.new("ScreenGui")
+  -- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
 local akey = Instance.new("TextLabel")
 local PenumbraShadow = Instance.new("ImageLabel")
@@ -210,6 +215,8 @@ local UIGradient_8 = Instance.new("UIGradient")
 local spacekey = Instance.new("TextLabel")
 local PenumbraShadow_9 = Instance.new("ImageLabel")
 local UIGradient_9 = Instance.new("UIGradient")
+
+--Properties:
 
 ScreenGui.Parent = game.CoreGui
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -508,9 +515,9 @@ PenumbraShadow_9.SliceCenter = Rect.new(10, 10, 118, 118)
 UIGradient_9.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))}
 UIGradient_9.Parent = PenumbraShadow_9
 
+-- Scripts:
 
-
-local function PACPO_fake_script() -- PenumbraShadow.HoverStay 
+local function TMQFQXG_fake_script() -- PenumbraShadow.HoverStay 
 	local script = Instance.new('LocalScript', PenumbraShadow)
 
 	local button = script.Parent
@@ -558,8 +565,8 @@ local function PACPO_fake_script() -- PenumbraShadow.HoverStay
 	
 	
 end
-coroutine.wrap(PACPO_fake_script)()
-local function OQMVUB_fake_script() -- PenumbraShadow_2.HoverStay 
+coroutine.wrap(TMQFQXG_fake_script)()
+local function UWCYB_fake_script() -- PenumbraShadow_2.HoverStay 
 	local script = Instance.new('LocalScript', PenumbraShadow_2)
 
 	local button = script.Parent
@@ -607,8 +614,8 @@ local function OQMVUB_fake_script() -- PenumbraShadow_2.HoverStay
 	
 	
 end
-coroutine.wrap(OQMVUB_fake_script)()
-local function CPOWGLW_fake_script() -- PenumbraShadow_3.HoverStay 
+coroutine.wrap(UWCYB_fake_script)()
+local function VWQXLCQ_fake_script() -- PenumbraShadow_3.HoverStay 
 	local script = Instance.new('LocalScript', PenumbraShadow_3)
 
 	local button = script.Parent
@@ -656,8 +663,8 @@ local function CPOWGLW_fake_script() -- PenumbraShadow_3.HoverStay
 	
 	
 end
-coroutine.wrap(CPOWGLW_fake_script)()
-local function GUJDYXQ_fake_script() -- PenumbraShadow_4.HoverStay 
+coroutine.wrap(VWQXLCQ_fake_script)()
+local function JMESMDT_fake_script() -- PenumbraShadow_4.HoverStay 
 	local script = Instance.new('LocalScript', PenumbraShadow_4)
 
 	local button = script.Parent
@@ -705,8 +712,8 @@ local function GUJDYXQ_fake_script() -- PenumbraShadow_4.HoverStay
 	
 	
 end
-coroutine.wrap(GUJDYXQ_fake_script)()
-local function IABI_fake_script() -- cps.LocalScript 
+coroutine.wrap(JMESMDT_fake_script)()
+local function HBGQQZ_fake_script() -- cps.LocalScript 
 	local script = Instance.new('LocalScript', cps)
 
 	local cps = 0
@@ -725,8 +732,8 @@ local function IABI_fake_script() -- cps.LocalScript
 		cps += 1
 	end)
 end
-coroutine.wrap(IABI_fake_script)()
-local function SVRZYMA_fake_script() -- PenumbraShadow_5.HoverStay 
+coroutine.wrap(HBGQQZ_fake_script)()
+local function KRUUKIM_fake_script() -- PenumbraShadow_5.HoverStay 
 	local script = Instance.new('LocalScript', PenumbraShadow_5)
 
 	local button = script.Parent
@@ -774,8 +781,8 @@ local function SVRZYMA_fake_script() -- PenumbraShadow_5.HoverStay
 	
 	
 end
-coroutine.wrap(SVRZYMA_fake_script)()
-local function JUHLG_fake_script() -- cps_2.LocalScript 
+coroutine.wrap(KRUUKIM_fake_script)()
+local function MWXI_fake_script() -- cps_2.LocalScript 
 	local script = Instance.new('LocalScript', cps_2)
 
 	local cps = 0
@@ -794,8 +801,8 @@ local function JUHLG_fake_script() -- cps_2.LocalScript
 		cps += 1
 	end)
 end
-coroutine.wrap(JUHLG_fake_script)()
-local function JFKDZL_fake_script() -- PenumbraShadow_6.HoverStay 
+coroutine.wrap(MWXI_fake_script)()
+local function URJYJ_fake_script() -- PenumbraShadow_6.HoverStay 
 	local script = Instance.new('LocalScript', PenumbraShadow_6)
 
 	local button = script.Parent
@@ -843,8 +850,8 @@ local function JFKDZL_fake_script() -- PenumbraShadow_6.HoverStay
 	
 	
 end
-coroutine.wrap(JFKDZL_fake_script)()
-local function SCLAP_fake_script() -- fps.LocalScript 
+coroutine.wrap(URJYJ_fake_script)()
+local function BTOQ_fake_script() -- fps.LocalScript 
 	local script = Instance.new('LocalScript', fps)
 
 	local RunService = game:GetService("RunService")
@@ -864,8 +871,8 @@ local function SCLAP_fake_script() -- fps.LocalScript
 		wait(1)
 	end
 end
-coroutine.wrap(SCLAP_fake_script)()
-local function MVGAAAB_fake_script() -- PenumbraShadow_7.HoverStay 
+coroutine.wrap(BTOQ_fake_script)()
+local function BNEK_fake_script() -- PenumbraShadow_7.HoverStay 
 	local script = Instance.new('LocalScript', PenumbraShadow_7)
 
 	local button = script.Parent
@@ -913,8 +920,8 @@ local function MVGAAAB_fake_script() -- PenumbraShadow_7.HoverStay
 	
 	
 end
-coroutine.wrap(MVGAAAB_fake_script)()
-local function RIAP_fake_script() -- kps.LocalScript 
+coroutine.wrap(BNEK_fake_script)()
+local function IHSYC_fake_script() -- kps.LocalScript 
 	local script = Instance.new('LocalScript', kps)
 
 	local RunService = game:GetService("RunService")
@@ -930,49 +937,6 @@ local function RIAP_fake_script() -- kps.LocalScript
 		D = Enum.KeyCode.D,
 		Space = Enum.KeyCode.Space,
 	}
-	
-	
-	
-		while wait() do
-			if game:GetService("UserInputService"):IsKeyDown(keys.W) then
-			tween:Create(script.Parent.Parent.wkey,TweenInfo.new(1),{TextColor3 = Color3.fromRGB(8, 8, 8)}):Play()
-		else
-			tween:Create(script.Parent.Parent.wkey,TweenInfo.new(1),{TextColor3 = Color3.fromRGB(254, 252, 255)}):Play()
-			end
-			if game:GetService("UserInputService"):IsKeyDown(keys.A) then
-			tween:Create(script.Parent.Parent.akey,TweenInfo.new(1),{TextColor3 = Color3.fromRGB(8, 8, 8)}):Play()
-		else
-			tween:Create(script.Parent.Parent.akey,TweenInfo.new(1),{TextColor3 = Color3.fromRGB(254, 252, 255)}):Play()
-				
-			end
-			if game:GetService("UserInputService"):IsKeyDown(keys.S) then
-				
-			tween:Create(script.Parent.Parent.skey,TweenInfo.new(1),{TextColor3 = Color3.fromRGB(8, 8, 8)}):Play()
-		else
-			tween:Create(script.Parent.Parent.skey,TweenInfo.new(1),{TextColor3 = Color3.fromRGB(254, 252, 255)}):Play()
-			end
-			if game:GetService("UserInputService"):IsKeyDown(keys.D) then
-			tween:Create(script.Parent.Parent.dkey,TweenInfo.new(1),{TextColor3 = Color3.fromRGB(8, 8, 8)}):Play()
-		else
-			tween:Create(script.Parent.Parent.dkey,TweenInfo.new(1),{TextColor3 = Color3.fromRGB(254, 252, 255)}):Play()
-			end
-			if game:GetService("UserInputService"):IsKeyDown(keys.Space) then
-				
-			tween:Create(script.Parent.Parent.spacekey,TweenInfo.new(1),{TextColor3 = Color3.fromRGB(8, 8, 8)}):Play()
-		else
-			tween:Create(script.Parent.Parent.spacekey,TweenInfo.new(1),{TextColor3 = Color3.fromRGB(254, 252, 255)}):Play()
-		end
-		if game:GetService('UserInputService'):IsMouseButtonPressed(Enum.UserInputType.MouseButton1) then
-			tween:Create(script.Parent.Parent.lmb,TweenInfo.new(1),{TextColor3 = Color3.fromRGB(8, 8, 8)}):Play()
-		else
-			tween:Create(script.Parent.Parent.lmb,TweenInfo.new(1),{TextColor3 = Color3.fromRGB(254, 252, 255)}):Play()
-		end
-		if game:GetService('UserInputService'):IsMouseButtonPressed(Enum.UserInputType.MouseButton2) then
-			tween:Create(script.Parent.Parent.rmb,TweenInfo.new(1),{TextColor3 = Color3.fromRGB(8, 8, 8)}):Play()
-		else
-			tween:Create(script.Parent.Parent.rmb,TweenInfo.new(1),{TextColor3 = Color3.fromRGB(254, 252, 255)}):Play()
-		end
-	end
 	
 	
 	
@@ -1002,8 +966,8 @@ local function RIAP_fake_script() -- kps.LocalScript
 		kps.Text = keysPressed.. " KPS"
 	end)
 end
-coroutine.wrap(RIAP_fake_script)()
-local function RGSAJNE_fake_script() -- PenumbraShadow_8.HoverStay 
+coroutine.wrap(IHSYC_fake_script)()
+local function YHVWHN_fake_script() -- PenumbraShadow_8.HoverStay 
 	local script = Instance.new('LocalScript', PenumbraShadow_8)
 
 	local button = script.Parent
@@ -1051,8 +1015,69 @@ local function RGSAJNE_fake_script() -- PenumbraShadow_8.HoverStay
 	
 	
 end
-coroutine.wrap(RGSAJNE_fake_script)()
-local function IDWMT_fake_script() -- PenumbraShadow_9.HoverStay 
+coroutine.wrap(YHVWHN_fake_script)()
+local function RXYQQH_fake_script() -- kps.LocalScript 
+	local script = Instance.new('LocalScript', kps)
+
+	local RunService = game:GetService("RunService")
+	local Players = game:GetService("Players")
+	local kps = script.Parent
+	
+	local tween = game:GetService('TweenService')
+	
+	local keys = {
+		W = Enum.KeyCode.W,
+		A = Enum.KeyCode.A,
+		S = Enum.KeyCode.S,
+		D = Enum.KeyCode.D,
+		Space = Enum.KeyCode.Space,
+	}
+	
+	
+	while wait() do
+		if game:GetService("UserInputService"):IsKeyDown(keys.W) then
+			tween:Create(script.Parent.Parent.wkey,TweenInfo.new(1),{TextColor3 = Color3.fromRGB(8, 8, 8)}):Play()
+		else
+			tween:Create(script.Parent.Parent.wkey,TweenInfo.new(1),{TextColor3 = Color3.fromRGB(254, 252, 255)}):Play()
+		end
+		if game:GetService("UserInputService"):IsKeyDown(keys.A) then
+			tween:Create(script.Parent.Parent.akey,TweenInfo.new(1),{TextColor3 = Color3.fromRGB(8, 8, 8)}):Play()
+		else
+			tween:Create(script.Parent.Parent.akey,TweenInfo.new(1),{TextColor3 = Color3.fromRGB(254, 252, 255)}):Play()
+	
+		end
+		if game:GetService("UserInputService"):IsKeyDown(keys.S) then
+	
+			tween:Create(script.Parent.Parent.skey,TweenInfo.new(1),{TextColor3 = Color3.fromRGB(8, 8, 8)}):Play()
+		else
+			tween:Create(script.Parent.Parent.skey,TweenInfo.new(1),{TextColor3 = Color3.fromRGB(254, 252, 255)}):Play()
+		end
+		if game:GetService("UserInputService"):IsKeyDown(keys.D) then
+			tween:Create(script.Parent.Parent.dkey,TweenInfo.new(1),{TextColor3 = Color3.fromRGB(8, 8, 8)}):Play()
+		else
+			tween:Create(script.Parent.Parent.dkey,TweenInfo.new(1),{TextColor3 = Color3.fromRGB(254, 252, 255)}):Play()
+		end
+		if game:GetService("UserInputService"):IsKeyDown(keys.Space) then
+	
+			tween:Create(script.Parent.Parent.spacekey,TweenInfo.new(1),{TextColor3 = Color3.fromRGB(8, 8, 8)}):Play()
+		else
+			tween:Create(script.Parent.Parent.spacekey,TweenInfo.new(1),{TextColor3 = Color3.fromRGB(254, 252, 255)}):Play()
+		end
+		if game:GetService('UserInputService'):IsMouseButtonPressed(Enum.UserInputType.MouseButton1) then
+			tween:Create(script.Parent.Parent.lmb,TweenInfo.new(1),{TextColor3 = Color3.fromRGB(8, 8, 8)}):Play()
+		else
+			tween:Create(script.Parent.Parent.lmb,TweenInfo.new(1),{TextColor3 = Color3.fromRGB(254, 252, 255)}):Play()
+		end
+		if game:GetService('UserInputService'):IsMouseButtonPressed(Enum.UserInputType.MouseButton2) then
+			tween:Create(script.Parent.Parent.rmb,TweenInfo.new(1),{TextColor3 = Color3.fromRGB(8, 8, 8)}):Play()
+		else
+			tween:Create(script.Parent.Parent.rmb,TweenInfo.new(1),{TextColor3 = Color3.fromRGB(254, 252, 255)}):Play()
+		end
+	end
+	
+end
+coroutine.wrap(RXYQQH_fake_script)()
+local function XUFDL_fake_script() -- PenumbraShadow_9.HoverStay 
 	local script = Instance.new('LocalScript', PenumbraShadow_9)
 
 	local button = script.Parent
@@ -1100,8 +1125,8 @@ local function IDWMT_fake_script() -- PenumbraShadow_9.HoverStay
 	
 	
 end
-coroutine.wrap(IDWMT_fake_script)()
-local function KDAUJW_fake_script() -- ScreenGui.LocalScript 
+coroutine.wrap(XUFDL_fake_script)()
+local function UFAWUM_fake_script() -- ScreenGui.LocalScript 
 	local script = Instance.new('LocalScript', ScreenGui)
 
 	addDrag = function(object)
@@ -1165,65 +1190,8 @@ local function KDAUJW_fake_script() -- ScreenGui.LocalScript
 	
 	addDrag(script.Parent.Main)
 end
-coroutine.wrap(KDAUJW_fake_script)()
-end
+coroutine.wrap(UFAWUM_fake_script)()
 
-util.addDrag = function(object)
-
-	local UserInputService = game:GetService("UserInputService")
-	local runService = (game:GetService("RunService"));
-
-	local gui = object
-
-	local dragging
-	local dragInput
-	local dragStart
-	local startPos
-
-	local function Lerp(a, b, m)
-		return a + (b - a) * m
-	end;
-
-	local lastMousePos
-	local lastGoalPos
-	local DRAG_SPEED = (8); -- // The speed of the UI darg.
-
-	local function Update(dt)
-		if not (startPos) then return end;
-		if not (dragging) and (lastGoalPos) then
-			gui.Position = UDim2.new(startPos.X.Scale, Lerp(gui.Position.X.Offset, lastGoalPos.X.Offset, dt * DRAG_SPEED), startPos.Y.Scale, Lerp(gui.Position.Y.Offset, lastGoalPos.Y.Offset, dt * DRAG_SPEED))
-			return 
-		end;
-
-		local delta = (lastMousePos - UserInputService:GetMouseLocation())
-		local xGoal = (startPos.X.Offset - delta.X);
-		local yGoal = (startPos.Y.Offset - delta.Y);
-		lastGoalPos = UDim2.new(startPos.X.Scale, xGoal, startPos.Y.Scale, yGoal)
-		gui.Position = UDim2.new(startPos.X.Scale, Lerp(gui.Position.X.Offset, xGoal, dt * DRAG_SPEED), startPos.Y.Scale, Lerp(gui.Position.Y.Offset, yGoal, dt * DRAG_SPEED))
-	end;
-
-	gui.InputBegan:Connect(function(input)
-		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-			dragging = true
-			dragStart = input.Position
-			startPos = gui.Position
-			lastMousePos = UserInputService:GetMouseLocation()
-
-			input.Changed:Connect(function()
-				if input.UserInputState == Enum.UserInputState.End then
-					dragging = false
-				end
-			end)
-		end
-	end)
-
-	gui.InputChanged:Connect(function(input)
-		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-			dragInput = input
-		end
-	end)
-
-	runService.Heartbeat:Connect(Update)
 end
 
 util.tween = function(object, properties, time, easing, speed)

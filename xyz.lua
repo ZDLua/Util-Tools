@@ -13,7 +13,7 @@ util.async = function(func)
 end
 
 util.keyCodeToString = function(keyCode)
-	if keyCode.Value < 127 and keyCode.Value > 33 then --// excluding space (32) character
+	if Enum.KeyCode then --// excluding space (32) character
 		return string.char(keyCode.Value)
 	else
 		return keyCode.Name --// just return keycode name if not within range

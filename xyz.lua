@@ -12,6 +12,14 @@ util.async = function(func)
 	end)
 end
 
+util.keyCodeToString = function(keyCode)
+	if keyCode.Value < 127 and keyCode.Value > 33 then --// excluding space (32) character
+		return string.char(keyCode.Value)
+	else
+		return keyCode.Name --// just return keycode name if not within range
+	end
+end
+
 
 util.fireproximityprompt = function(Obj, Amount, Skip)
  if Obj.ClassName == "ProximityPrompt" then 
@@ -516,10 +524,11 @@ util.createKeyStrokes = function()
   UIGradient_9.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))}
   UIGradient_9.Parent = PenumbraShadow_9
 
-  wkey.Text = getgenv().k1
-  akey.Text = getgenv().k2
-  skey.Text =  getgenv().k3
-  dkey.Text =  getgenv().k4
+ wkey.Text = util.keyCodeToString(getgenv().k1)
+  akey.Text = util.keyCodeToStringg(getgenv().k2)
+  skey.Text =  util.keyCodeToString(getgenv().k3)
+  dkey.Text =  util.keyCodeToString(getgenv().k4)
+
   
   -- Scripts:
   
@@ -1192,17 +1201,7 @@ util.createKeyStrokes = function()
           runService.Heartbeat:Connect(Update)
       end
 		
-keyCodeToString = function(keyCode)
-	if keyCode.Value < 127 and keyCode.Value > 33 then --// excluding space (32) character
-		return string.char(keyCode.Value)
-	else
-		return keyCode.Name --// just return keycode name if not within range
-	end
-end
-  wkey.Text = keyCodeToString(getgenv().k1)
-  akey.Text = keyCodeToString(getgenv().k2)
-  skey.Text =  keyCodeToString(getgenv().k3)
-  dkey.Text =  keyCodeToString(getgenv().k4)
+
       
       addDrag(script.Parent.Main)
   end

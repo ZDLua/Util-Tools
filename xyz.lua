@@ -220,7 +220,8 @@ local UIGradient_9 = Instance.new("UIGradient")
 
 ScreenGui.Parent = game.CoreGui
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
+ScreenGui.ResetOnSpawn = false
+	
 Main.Name = "Main"
 Main.Parent = ScreenGui
 Main.BackgroundColor3 = Color3.fromRGB(45, 45, 45)

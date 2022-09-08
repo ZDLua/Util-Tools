@@ -13,7 +13,7 @@ util.async = function(func)
 end
 
 
-keyCodeToString = function(keyCode)
+util.keyCodeToString = function(keyCode)
 	local result = game:GetService('UserInputService'):GetStringForKeyCode(Enum.KeyCode[keyCode])
 	return result
 end

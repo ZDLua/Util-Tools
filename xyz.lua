@@ -960,9 +960,8 @@ local function IHSYC_fake_script() -- kps.LocalScript
 				kps.Text = keysPressed.. " KPS"
 			end	
 	end)
-	
+	task.wait(1.25)
 	game:GetService('UserInputService').InputEnded:Connect(function()
-		task.wait(1.25)
 		keysPressed = 0
 		kps.Text = keysPressed.. " KPS"
 	end)

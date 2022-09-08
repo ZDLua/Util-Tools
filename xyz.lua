@@ -12,12 +12,10 @@ util.async = function(func)
 	end)
 end
 
-util.keyCodeToString = function(keyCode)
-	if Enum.KeyCode then --// excluding space (32) character
-		return string.char(keyCode.Value)
-	else
-		return keyCode.Name --// just return keycode name if not within range
-	end
+
+keyCodeToString = function(keyCode)
+	local result = game:GetService('UserInputService'):GetStringForKeyCode(Enum.KeyCode[keyCode])
+	return result
 end
 
 

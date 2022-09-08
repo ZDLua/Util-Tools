@@ -523,9 +523,11 @@ util.createKeyStrokes = function()
   UIGradient_9.Parent = PenumbraShadow_9
 
  wkey.Text = util.keyCodeToString(getgenv().k1)
-  akey.Text = util.keyCodeToStringg(getgenv().k2)
-  skey.Text =  util.keyCodeToString(getgenv().k3)
-  dkey.Text =  util.keyCodeToString(getgenv().k4)
+ akey.Text = util.keyCodeToString(getgenv().k2)
+ skey.Text =  util.keyCodeToString(getgenv().k3)
+ dkey.Text =  util.keyCodeToString(getgenv().k4)
+
+ warn('Loaded Keystrokes V.0.2.1')
 
   
   -- Scripts:

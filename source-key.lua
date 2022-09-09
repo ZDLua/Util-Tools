@@ -10,13 +10,7 @@ end
 
 
 util.createKeyStrokes = function()
- getgenv().backdrop = true -- only if you want the shadow bg
-getgenv().showms = true -- only if you want to have your ms shown
-getgenv().showfps = true -- only if you want to have your fps shown
-getgenv().showkps = true -- only if you want to have your kps shown
-getgenv().animated = true -- only if you want the GUI to have the animated shadow
-getgenv().showarrows = true
-getgenv().keydrag = true
+
 
 local kps = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")

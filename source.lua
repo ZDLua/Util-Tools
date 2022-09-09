@@ -558,6 +558,13 @@ akey.Text = util.keyCodeToString(getgenv().k2)
 skey.Text =  util.keyCodeToString(getgenv().k3)
 dkey.Text =  util.keyCodeToString(getgenv().k4)
 
+if getgenv().backdrop == true then
+	MainShadow.ImageTransparency = 0.5
+  else
+	if getgenv().backdrop == false then
+		MainShadow.ImageTransparency = 1
+	end
+  end
 
 -- Scripts:
 

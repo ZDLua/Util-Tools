@@ -621,6 +621,14 @@ else
 		downarrow.Visible = false
 	end
 end
+	
+if getgenv().maindrag == true then
+	addDrag(Main)
+else
+	if getgenv().maindrag == false then
+		return
+	end
+end
 
 if getgenv().keydrag == true then
 	addDrag(leftarrow)
@@ -1688,7 +1696,7 @@ local function SLCVG_fake_script() -- kps.LocalScript
 	end
 	
 	
-	addDrag(script.Parent.Main)
+	
 	
 	
 	

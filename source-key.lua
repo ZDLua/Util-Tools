@@ -10,10 +10,13 @@ end
 
 
 util.createKeyStrokes = function()
- -- Gui to Lua
--- Version: 3.2
-
--- Instances:
+ getgenv().backdrop = true -- only if you want the shadow bg
+getgenv().showms = true -- only if you want to have your ms shown
+getgenv().showfps = true -- only if you want to have your fps shown
+getgenv().showkps = true -- only if you want to have your kps shown
+getgenv().animated = true -- only if you want the GUI to have the animated shadow
+getgenv().showarrows = true
+getgenv().keydrag = true
 
 local kps = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
@@ -50,12 +53,29 @@ local UIGradient_9 = Instance.new("UIGradient")
 local ping = Instance.new("TextLabel")
 local PenumbraShadow_10 = Instance.new("ImageLabel")
 local UIGradient_10 = Instance.new("UIGradient")
+local leftarrow = Instance.new("ImageLabel")
+local PenumbraShadow_11 = Instance.new("ImageLabel")
+local UIGradient_11 = Instance.new("UIGradient")
+local arrowLeft = Instance.new("ImageButton")
+local rightarrow = Instance.new("ImageLabel")
+local PenumbraShadow_12 = Instance.new("ImageLabel")
+local UIGradient_12 = Instance.new("UIGradient")
+local arrowRight = Instance.new("ImageButton")
+local downarrow = Instance.new("ImageLabel")
+local PenumbraShadow_13 = Instance.new("ImageLabel")
+local UIGradient_13 = Instance.new("UIGradient")
+local arrowDown = Instance.new("ImageButton")
+local uparrow = Instance.new("ImageLabel")
+local PenumbraShadow_14 = Instance.new("ImageLabel")
+local UIGradient_14 = Instance.new("UIGradient")
+local arrowUp = Instance.new("ImageButton")
 
 --Properties:
 
 kps.Name = "kps"
 kps.Parent = game.CoreGui
 kps.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+kps.ResetOnSpawn = false
 
 Main.Name = "Main"
 Main.Parent = kps
@@ -379,6 +399,150 @@ PenumbraShadow_10.SliceCenter = Rect.new(10, 10, 118, 118)
 UIGradient_10.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))}
 UIGradient_10.Parent = PenumbraShadow_10
 
+leftarrow.Name = "leftarrow"
+leftarrow.Parent = Main
+leftarrow.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+leftarrow.BackgroundTransparency = 0.500
+leftarrow.BorderSizePixel = 0
+leftarrow.Position = UDim2.new(1.18972325, 0, 0.679127753, 0)
+leftarrow.Size = UDim2.new(0, 50, 0, 50)
+leftarrow.Visible = false
+leftarrow.ImageTransparency = 0.500
+
+PenumbraShadow_11.Name = "PenumbraShadow"
+PenumbraShadow_11.Parent = leftarrow
+PenumbraShadow_11.AnchorPoint = Vector2.new(0.5, 0.5)
+PenumbraShadow_11.BackgroundTransparency = 1.000
+PenumbraShadow_11.Position = UDim2.new(0.5, 0, 0.5, 1)
+PenumbraShadow_11.Size = UDim2.new(1, 18, 1, 18)
+PenumbraShadow_11.ZIndex = 0
+PenumbraShadow_11.Image = "rbxassetid://1316045217"
+PenumbraShadow_11.ImageTransparency = 0.790
+PenumbraShadow_11.ScaleType = Enum.ScaleType.Slice
+PenumbraShadow_11.SliceCenter = Rect.new(10, 10, 118, 118)
+
+UIGradient_11.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))}
+UIGradient_11.Parent = PenumbraShadow_11
+
+arrowLeft.Name = "arrowLeft"
+arrowLeft.Parent = leftarrow
+arrowLeft.BackgroundTransparency = 1.000
+arrowLeft.Position = UDim2.new(0.140000001, 0, 0.159999996, 0)
+arrowLeft.Size = UDim2.new(0, 35, 0, 36)
+arrowLeft.ZIndex = 2
+arrowLeft.Image = "rbxassetid://6764432408"
+arrowLeft.ImageRectOffset = Vector2.new(0, 550)
+arrowLeft.ImageRectSize = Vector2.new(50, 50)
+arrowLeft.ImageTransparency = 0.500
+
+rightarrow.Name = "rightarrow"
+rightarrow.Parent = Main
+rightarrow.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+rightarrow.BackgroundTransparency = 0.500
+rightarrow.BorderSizePixel = 0
+rightarrow.Position = UDim2.new(1.6561265, 0, 0.676012516, 0)
+rightarrow.Size = UDim2.new(0, 50, 0, 50)
+rightarrow.Visible = false
+rightarrow.ImageTransparency = 0.500
+
+PenumbraShadow_12.Name = "PenumbraShadow"
+PenumbraShadow_12.Parent = rightarrow
+PenumbraShadow_12.AnchorPoint = Vector2.new(0.5, 0.5)
+PenumbraShadow_12.BackgroundTransparency = 1.000
+PenumbraShadow_12.Position = UDim2.new(0.5, 0, 0.5, 1)
+PenumbraShadow_12.Size = UDim2.new(1, 18, 1, 18)
+PenumbraShadow_12.ZIndex = 0
+PenumbraShadow_12.Image = "rbxassetid://1316045217"
+PenumbraShadow_12.ImageTransparency = 0.790
+PenumbraShadow_12.ScaleType = Enum.ScaleType.Slice
+PenumbraShadow_12.SliceCenter = Rect.new(10, 10, 118, 118)
+
+UIGradient_12.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))}
+UIGradient_12.Parent = PenumbraShadow_12
+
+arrowRight.Name = "arrowRight"
+arrowRight.Parent = rightarrow
+arrowRight.BackgroundTransparency = 1.000
+arrowRight.Position = UDim2.new(0.139999986, 0, 0.159999996, 0)
+arrowRight.Size = UDim2.new(0, 35, 0, 36)
+arrowRight.ZIndex = 2
+arrowRight.Image = "rbxassetid://6764432408"
+arrowRight.ImageRectOffset = Vector2.new(0, 500)
+arrowRight.ImageRectSize = Vector2.new(50, 50)
+arrowRight.ImageTransparency = 0.500
+
+downarrow.Name = "downarrow"
+downarrow.Parent = Main
+downarrow.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+downarrow.BackgroundTransparency = 0.500
+downarrow.BorderSizePixel = 0
+downarrow.Position = UDim2.new(1.422925, 0, 0.672897279, 0)
+downarrow.Size = UDim2.new(0, 50, 0, 50)
+downarrow.Visible = false
+downarrow.ImageTransparency = 0.500
+
+PenumbraShadow_13.Name = "PenumbraShadow"
+PenumbraShadow_13.Parent = downarrow
+PenumbraShadow_13.AnchorPoint = Vector2.new(0.5, 0.5)
+PenumbraShadow_13.BackgroundTransparency = 1.000
+PenumbraShadow_13.Position = UDim2.new(0.5, 0, 0.5, 1)
+PenumbraShadow_13.Size = UDim2.new(1, 18, 1, 18)
+PenumbraShadow_13.ZIndex = 0
+PenumbraShadow_13.Image = "rbxassetid://1316045217"
+PenumbraShadow_13.ImageTransparency = 0.790
+PenumbraShadow_13.ScaleType = Enum.ScaleType.Slice
+PenumbraShadow_13.SliceCenter = Rect.new(10, 10, 118, 118)
+
+UIGradient_13.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))}
+UIGradient_13.Parent = PenumbraShadow_13
+
+arrowDown.Name = "arrowDown"
+arrowDown.Parent = downarrow
+arrowDown.BackgroundTransparency = 1.000
+arrowDown.Position = UDim2.new(0.139999986, 0, 0.139999986, 0)
+arrowDown.Size = UDim2.new(0, 35, 0, 36)
+arrowDown.ZIndex = 2
+arrowDown.Image = "rbxassetid://6764432408"
+arrowDown.ImageRectOffset = Vector2.new(0, 600)
+arrowDown.ImageRectSize = Vector2.new(50, 50)
+arrowDown.ImageTransparency = 0.500
+
+uparrow.Name = "uparrow"
+uparrow.Parent = Main
+uparrow.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+uparrow.BackgroundTransparency = 0.500
+uparrow.BorderSizePixel = 0
+uparrow.Position = UDim2.new(1.4268775, 0, 0.479750842, 0)
+uparrow.Size = UDim2.new(0, 50, 0, 50)
+uparrow.Visible = false
+uparrow.ImageTransparency = 0.500
+
+PenumbraShadow_14.Name = "PenumbraShadow"
+PenumbraShadow_14.Parent = uparrow
+PenumbraShadow_14.AnchorPoint = Vector2.new(0.5, 0.5)
+PenumbraShadow_14.BackgroundTransparency = 1.000
+PenumbraShadow_14.Position = UDim2.new(0.5, 0, 0.5, 1)
+PenumbraShadow_14.Size = UDim2.new(1, 18, 1, 18)
+PenumbraShadow_14.ZIndex = 0
+PenumbraShadow_14.Image = "rbxassetid://1316045217"
+PenumbraShadow_14.ImageTransparency = 0.790
+PenumbraShadow_14.ScaleType = Enum.ScaleType.Slice
+PenumbraShadow_14.SliceCenter = Rect.new(10, 10, 118, 118)
+
+UIGradient_14.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))}
+UIGradient_14.Parent = PenumbraShadow_14
+
+arrowUp.Name = "arrowUp"
+arrowUp.Parent = uparrow
+arrowUp.BackgroundTransparency = 1.000
+arrowUp.Position = UDim2.new(0.139999986, 0, 0.139999986, 0)
+arrowUp.Size = UDim2.new(0, 35, 0, 36)
+arrowUp.ZIndex = 2
+arrowUp.Image = "rbxassetid://6764432408"
+arrowUp.ImageRectOffset = Vector2.new(0, 450)
+arrowUp.ImageRectSize = Vector2.new(50, 50)
+arrowUp.ImageTransparency = 0.500
+
 wkey.Text = util.keyCodeToString(getgenv().k1)
 akey.Text = util.keyCodeToString(getgenv().k2)
 skey.Text =  util.keyCodeToString(getgenv().k3)
@@ -386,39 +550,37 @@ dkey.Text =  util.keyCodeToString(getgenv().k4)
 
 if getgenv().backdrop == true then
 	MainShadow.ImageTransparency = 0.5
-  else
+else
 	if getgenv().backdrop == false then
 		MainShadow.ImageTransparency = 1
 	end
-  end
-	
+end
+
 if getgenv().showms == true then
 	ping.Visible = true
-  else
+else
 	if getgenv().showms == false then
 		ping.Visible = false
 	end
-  end
-	
+end
+
 if getgenv().showfps == true then
 	fps.Visible = true
-  else
+else
 	if getgenv().showfps == false then
 		fps.Visible = false
 	end
-  end
-	
-  if getgenv().showkps == true then
+end
+
+if getgenv().showkps == true then
 	kps_2.Visible = true
-  else
+else
 	if getgenv().showkps == false then
 		kps_2.Visible = false
 	end
-  end
+end
 
-
-
-  if getgenv().animated == true then
+if getgenv().animated == true then
 	UIGradient.Enabled = true
 	UIGradient_2.Enabled = true
 	UIGradient_3.Enabled = true
@@ -429,24 +591,59 @@ if getgenv().showfps == true then
 	UIGradient_8.Enabled = true
 	UIGradient_9.Enabled = true
 	UIGradient_10.Enabled = true
-  else
+	UIGradient_11.Enabled = true
+	UIGradient_12.Enabled = true
+	UIGradient_13.Enabled = true
+	UIGradient_14.Enabled = true
+else
 	if getgenv().animated == false then
 		UIGradient.Enabled = false
 		UIGradient_2.Enabled = false
-	UIGradient_3.Enabled = false
-	UIGradient_4.Enabled = false
-	UIGradient_5.Enabled = false
-	UIGradient_6.Enabled = false
-	UIGradient_7.Enabled = false
-	UIGradient_8.Enabled = false
-	UIGradient_9.Enabled = false
-	UIGradient_10.Enabled = false
+		UIGradient_3.Enabled = false
+		UIGradient_4.Enabled = false
+		UIGradient_5.Enabled = false
+		UIGradient_6.Enabled = false
+		UIGradient_7.Enabled = false
+		UIGradient_8.Enabled = false
+		UIGradient_9.Enabled = false
+		UIGradient_10.Enabled = false
+		UIGradient_11.Enabled = false
+		UIGradient_12.Enabled = false
+		UIGradient_13.Enabled = false
+		UIGradient_14.Enabled = false
 	end
-  end
+end
 
--- Scripts:
+if getgenv().showarrows == true then
+	uparrow.Visible = true
+	leftarrow.Visible = true
+	rightarrow.Visible = true
+	downarrow.Visible = true
+else
+	if getgenv().showarrows == false then
+		uparrow.Visible = false
+		leftarrow.Visible = false
+		rightarrow.Visible = false
+		downarrow.Visible = false
+	end
+end
 
-local function ENIROE_fake_script() -- PenumbraShadow.HoverStay 
+if getgenv().keydrag == true then
+	addDrag(leftarrow)
+	addDrag(rightarrow)
+	addDrag(downarrow)
+	addDrag(uparrow)
+	addDrag(wkey)
+	addDrag(akey)
+	addDrag(skey)
+	addDrag(dkey)
+else
+	if getgenv().draggable == false then
+		return
+	end
+end
+
+local function WFJRTU_fake_script() -- PenumbraShadow.HoverStay 
 	local script = Instance.new('LocalScript', PenumbraShadow)
 
 	local button = script.Parent
@@ -494,8 +691,8 @@ local function ENIROE_fake_script() -- PenumbraShadow.HoverStay
 	
 	
 end
-coroutine.wrap(ENIROE_fake_script)()
-local function VOGLT_fake_script() -- PenumbraShadow_2.HoverStay 
+coroutine.wrap(WFJRTU_fake_script)()
+local function DSGKHC_fake_script() -- PenumbraShadow_2.HoverStay 
 	local script = Instance.new('LocalScript', PenumbraShadow_2)
 
 	local button = script.Parent
@@ -543,8 +740,8 @@ local function VOGLT_fake_script() -- PenumbraShadow_2.HoverStay
 	
 	
 end
-coroutine.wrap(VOGLT_fake_script)()
-local function MMNKERA_fake_script() -- PenumbraShadow_3.HoverStay 
+coroutine.wrap(DSGKHC_fake_script)()
+local function ZKVDEXN_fake_script() -- PenumbraShadow_3.HoverStay 
 	local script = Instance.new('LocalScript', PenumbraShadow_3)
 
 	local button = script.Parent
@@ -592,8 +789,8 @@ local function MMNKERA_fake_script() -- PenumbraShadow_3.HoverStay
 	
 	
 end
-coroutine.wrap(MMNKERA_fake_script)()
-local function NMFZYQ_fake_script() -- PenumbraShadow_4.HoverStay 
+coroutine.wrap(ZKVDEXN_fake_script)()
+local function YNXA_fake_script() -- PenumbraShadow_4.HoverStay 
 	local script = Instance.new('LocalScript', PenumbraShadow_4)
 
 	local button = script.Parent
@@ -641,8 +838,8 @@ local function NMFZYQ_fake_script() -- PenumbraShadow_4.HoverStay
 	
 	
 end
-coroutine.wrap(NMFZYQ_fake_script)()
-local function BYRZ_fake_script() -- cps.LocalScript 
+coroutine.wrap(YNXA_fake_script)()
+local function NDNUMRV_fake_script() -- cps.LocalScript 
 	local script = Instance.new('LocalScript', cps)
 
 	local cps = 0
@@ -661,8 +858,8 @@ local function BYRZ_fake_script() -- cps.LocalScript
 		cps += 1
 	end)
 end
-coroutine.wrap(BYRZ_fake_script)()
-local function RBKWO_fake_script() -- PenumbraShadow_5.HoverStay 
+coroutine.wrap(NDNUMRV_fake_script)()
+local function WJLES_fake_script() -- PenumbraShadow_5.HoverStay 
 	local script = Instance.new('LocalScript', PenumbraShadow_5)
 
 	local button = script.Parent
@@ -710,8 +907,8 @@ local function RBKWO_fake_script() -- PenumbraShadow_5.HoverStay
 	
 	
 end
-coroutine.wrap(RBKWO_fake_script)()
-local function UTIT_fake_script() -- cps_2.LocalScript 
+coroutine.wrap(WJLES_fake_script)()
+local function NVQBEE_fake_script() -- cps_2.LocalScript 
 	local script = Instance.new('LocalScript', cps_2)
 
 	local cps = 0
@@ -730,8 +927,8 @@ local function UTIT_fake_script() -- cps_2.LocalScript
 		cps += 1
 	end)
 end
-coroutine.wrap(UTIT_fake_script)()
-local function XJVHB_fake_script() -- PenumbraShadow_6.HoverStay 
+coroutine.wrap(NVQBEE_fake_script)()
+local function BADMA_fake_script() -- PenumbraShadow_6.HoverStay 
 	local script = Instance.new('LocalScript', PenumbraShadow_6)
 
 	local button = script.Parent
@@ -779,8 +976,8 @@ local function XJVHB_fake_script() -- PenumbraShadow_6.HoverStay
 	
 	
 end
-coroutine.wrap(XJVHB_fake_script)()
-local function HGCD_fake_script() -- fps.LocalScript 
+coroutine.wrap(BADMA_fake_script)()
+local function YPTTZZF_fake_script() -- fps.LocalScript 
 	local script = Instance.new('LocalScript', fps)
 
 	local RunService = game:GetService("RunService")
@@ -839,8 +1036,8 @@ local function HGCD_fake_script() -- fps.LocalScript
 		wait(1)
 	end
 end
-coroutine.wrap(HGCD_fake_script)()
-local function VUMYRY_fake_script() -- PenumbraShadow_7.HoverStay 
+coroutine.wrap(YPTTZZF_fake_script)()
+local function TGMN_fake_script() -- PenumbraShadow_7.HoverStay 
 	local script = Instance.new('LocalScript', PenumbraShadow_7)
 
 	local button = script.Parent
@@ -888,8 +1085,8 @@ local function VUMYRY_fake_script() -- PenumbraShadow_7.HoverStay
 	
 	
 end
-coroutine.wrap(VUMYRY_fake_script)()
-local function PKUC_fake_script() -- kps_2.LocalScript 
+coroutine.wrap(TGMN_fake_script)()
+local function GUOJ_fake_script() -- kps_2.LocalScript 
 	local script = Instance.new('LocalScript', kps_2)
 
 	local RunService = game:GetService("RunService")
@@ -897,12 +1094,17 @@ local function PKUC_fake_script() -- kps_2.LocalScript
 	local kps = script.Parent
 	local tween = game:GetService('TweenService')
 	local keysPressed = 0
+
 	
 	local keys = {
 		W = Enum.KeyCode[getgenv().k1],
 		A = Enum.KeyCode[getgenv().k2],
 		S = Enum.KeyCode[getgenv().k3],
 		D = Enum.KeyCode[getgenv().k4],
+		Up = Enum.KeyCode.Up,
+		Down = Enum.KeyCode.Down,
+		Right = Enum.KeyCode.Right,
+		Left = Enum.KeyCode.Left,
 		Space = Enum.KeyCode.Space,
 	}
 	
@@ -925,7 +1127,26 @@ local function PKUC_fake_script() -- kps_2.LocalScript
 			if input.KeyCode == keys.D then
 				keysPressed = keysPressed + 1
 				kps.Text = keysPressed.. " KPS"
-			end	
+		end
+		
+		
+		if input.KeyCode == keys.Up then
+			keysPressed = keysPressed + 1
+			kps.Text = keysPressed.. " KPS"
+		end	
+		if input.KeyCode == keys.Down then
+			keysPressed = keysPressed + 1
+			kps.Text = keysPressed.. " KPS"
+		end	
+		if input.KeyCode == keys.Left then
+			keysPressed = keysPressed + 1
+			kps.Text = keysPressed.. " KPS"
+		end	
+		if input.KeyCode == keys.Right then
+			keysPressed = keysPressed + 1
+			kps.Text = keysPressed.. " KPS"
+		end	
+		
 	end)
 	
 	game:GetService('UserInputService').InputEnded:Connect(function()
@@ -934,8 +1155,8 @@ local function PKUC_fake_script() -- kps_2.LocalScript
 		kps.Text = keysPressed.. " KPS"
 	end)
 end
-coroutine.wrap(PKUC_fake_script)()
-local function EIQHDW_fake_script() -- PenumbraShadow_8.HoverStay 
+coroutine.wrap(GUOJ_fake_script)()
+local function YCFHWQC_fake_script() -- PenumbraShadow_8.HoverStay 
 	local script = Instance.new('LocalScript', PenumbraShadow_8)
 
 	local button = script.Parent
@@ -983,8 +1204,8 @@ local function EIQHDW_fake_script() -- PenumbraShadow_8.HoverStay
 	
 	
 end
-coroutine.wrap(EIQHDW_fake_script)()
-local function EJPIOKK_fake_script() -- kps_2.LocalScript 
+coroutine.wrap(YCFHWQC_fake_script)()
+local function TLIJHH_fake_script() -- kps_2.LocalScript 
 	local script = Instance.new('LocalScript', kps_2)
 
 	local RunService = game:GetService("RunService")
@@ -998,8 +1219,13 @@ local function EJPIOKK_fake_script() -- kps_2.LocalScript
 		A = Enum.KeyCode[getgenv().k2],
 		S = Enum.KeyCode[getgenv().k3],
 		D = Enum.KeyCode[getgenv().k4],
+		Up = Enum.KeyCode.Up,
+		Down = Enum.KeyCode.Down,
+		Right = Enum.KeyCode.Right,
+		Left = Enum.KeyCode.Left,
 		Space = Enum.KeyCode.Space,
 	}
+	
 	
 	
 	while wait() do
@@ -1041,11 +1267,38 @@ local function EJPIOKK_fake_script() -- kps_2.LocalScript
 		else
 			tween:Create(script.Parent.Parent.rmb,TweenInfo.new(1),{TextColor3 = Color3.fromRGB(254, 252, 255)}):Play()
 		end
+		
+		
+		
+		
+		if game:GetService("UserInputService"):IsKeyDown(keys.Up) then
+			tween:Create(script.Parent.Parent.uparrow.arrowUp,TweenInfo.new(1),{ImageColor3 = Color3.fromRGB(8, 8, 8)}):Play()
+		else
+			tween:Create(script.Parent.Parent.uparrow.arrowUp,TweenInfo.new(1),{ImageColor3 = Color3.fromRGB(254, 252, 255)}):Play()
+		end
+		if game:GetService("UserInputService"):IsKeyDown(keys.Down) then
+			tween:Create(script.Parent.Parent.downarrow.arrowDown,TweenInfo.new(1),{ImageColor3 = Color3.fromRGB(8, 8, 8)}):Play()
+		else
+			tween:Create(script.Parent.Parent.downarrow.arrowDown,TweenInfo.new(1),{ImageColor3 = Color3.fromRGB(254, 252, 255)}):Play()
+	
+		end
+		if game:GetService("UserInputService"):IsKeyDown(keys.Left) then
+	
+			tween:Create(script.Parent.Parent.leftarrow.arrowLeft,TweenInfo.new(1),{ImageColor3 = Color3.fromRGB(8, 8, 8)}):Play()
+		else
+			tween:Create(script.Parent.Parent.leftarrow.arrowLeft,TweenInfo.new(1),{ImageColor3 = Color3.fromRGB(254, 252, 255)}):Play()
+		end
+		if game:GetService("UserInputService"):IsKeyDown(keys.Right) then
+			tween:Create(script.Parent.Parent.rightarrow.arrowRight,TweenInfo.new(1),{ImageColor3 = Color3.fromRGB(8, 8, 8)}):Play()
+		else
+			tween:Create(script.Parent.Parent.rightarrow.arrowRight,TweenInfo.new(1),{ImageColor3 = Color3.fromRGB(254, 252, 255)}):Play()
+		end
+		
 	end
 	
 end
-coroutine.wrap(EJPIOKK_fake_script)()
-local function ROZDIY_fake_script() -- PenumbraShadow_9.HoverStay 
+coroutine.wrap(TLIJHH_fake_script)()
+local function LHISCL_fake_script() -- PenumbraShadow_9.HoverStay 
 	local script = Instance.new('LocalScript', PenumbraShadow_9)
 
 	local button = script.Parent
@@ -1093,8 +1346,8 @@ local function ROZDIY_fake_script() -- PenumbraShadow_9.HoverStay
 	
 	
 end
-coroutine.wrap(ROZDIY_fake_script)()
-local function BDOESB_fake_script() -- ping.LocalScript 
+coroutine.wrap(LHISCL_fake_script)()
+local function EEXN_fake_script() -- ping.LocalScript 
 	local script = Instance.new('LocalScript', ping)
 
 	local RunService = game:GetService("RunService")
@@ -1133,8 +1386,8 @@ local function BDOESB_fake_script() -- ping.LocalScript
 	
 	PingThread()
 end
-coroutine.wrap(BDOESB_fake_script)()
-local function FFML_fake_script() -- PenumbraShadow_10.HoverStay 
+coroutine.wrap(EEXN_fake_script)()
+local function VQPYD_fake_script() -- PenumbraShadow_10.HoverStay 
 	local script = Instance.new('LocalScript', PenumbraShadow_10)
 
 	local button = script.Parent
@@ -1182,8 +1435,204 @@ local function FFML_fake_script() -- PenumbraShadow_10.HoverStay
 	
 	
 end
-coroutine.wrap(FFML_fake_script)()
-local function MLWX_fake_script() -- kps.LocalScript 
+coroutine.wrap(VQPYD_fake_script)()
+local function MASQ_fake_script() -- PenumbraShadow_11.HoverStay 
+	local script = Instance.new('LocalScript', PenumbraShadow_11)
+
+	local button = script.Parent
+	local gradient = button.UIGradient
+	local ts = game:GetService("TweenService")
+	local ti = TweenInfo.new(2.5, Enum.EasingStyle.Linear, Enum.EasingDirection.Out)
+	local offset1 = {Offset = Vector2.new(-1, 0)}
+	local create1 = ts:Create(gradient, ti, offset1)
+	local startPos = Vector2.new(1, 0)
+	local rot = 180
+	
+	gradient.Offset = startPos
+	gradient.Rotation = 0
+	
+	
+		
+		button.BorderSizePixel = 2
+		create1:Play()
+	
+	
+	local function completed()
+			
+		if button.BorderSizePixel == 2 and rot == 0 then
+			
+			gradient.Rotation = 180
+			gradient.Offset = startPos
+			create1:Play()	
+			
+		elseif button.BorderSizePixel == 2 and rot == 180 then
+			
+			gradient.Rotation = 0
+			gradient.Offset = startPos
+			create1:Play()
+			
+		end
+			
+	end
+	
+	create1.Completed:Connect(function() 
+		
+		if rot == 0 then rot = 180 elseif rot == 180 then rot = 0 end
+		completed()
+		
+	end)
+	
+	
+end
+coroutine.wrap(MASQ_fake_script)()
+local function MKSV_fake_script() -- PenumbraShadow_12.HoverStay 
+	local script = Instance.new('LocalScript', PenumbraShadow_12)
+
+	local button = script.Parent
+	local gradient = button.UIGradient
+	local ts = game:GetService("TweenService")
+	local ti = TweenInfo.new(2.5, Enum.EasingStyle.Linear, Enum.EasingDirection.Out)
+	local offset1 = {Offset = Vector2.new(-1, 0)}
+	local create1 = ts:Create(gradient, ti, offset1)
+	local startPos = Vector2.new(1, 0)
+	local rot = 180
+	
+	gradient.Offset = startPos
+	gradient.Rotation = 0
+	
+	
+		
+		button.BorderSizePixel = 2
+		create1:Play()
+	
+	
+	local function completed()
+			
+		if button.BorderSizePixel == 2 and rot == 0 then
+			
+			gradient.Rotation = 180
+			gradient.Offset = startPos
+			create1:Play()	
+			
+		elseif button.BorderSizePixel == 2 and rot == 180 then
+			
+			gradient.Rotation = 0
+			gradient.Offset = startPos
+			create1:Play()
+			
+		end
+			
+	end
+	
+	create1.Completed:Connect(function() 
+		
+		if rot == 0 then rot = 180 elseif rot == 180 then rot = 0 end
+		completed()
+		
+	end)
+	
+	
+end
+coroutine.wrap(MKSV_fake_script)()
+local function PRFCY_fake_script() -- PenumbraShadow_13.HoverStay 
+	local script = Instance.new('LocalScript', PenumbraShadow_13)
+
+	local button = script.Parent
+	local gradient = button.UIGradient
+	local ts = game:GetService("TweenService")
+	local ti = TweenInfo.new(2.5, Enum.EasingStyle.Linear, Enum.EasingDirection.Out)
+	local offset1 = {Offset = Vector2.new(-1, 0)}
+	local create1 = ts:Create(gradient, ti, offset1)
+	local startPos = Vector2.new(1, 0)
+	local rot = 180
+	
+	gradient.Offset = startPos
+	gradient.Rotation = 0
+	
+	
+		
+		button.BorderSizePixel = 2
+		create1:Play()
+	
+	
+	local function completed()
+			
+		if button.BorderSizePixel == 2 and rot == 0 then
+			
+			gradient.Rotation = 180
+			gradient.Offset = startPos
+			create1:Play()	
+			
+		elseif button.BorderSizePixel == 2 and rot == 180 then
+			
+			gradient.Rotation = 0
+			gradient.Offset = startPos
+			create1:Play()
+			
+		end
+			
+	end
+	
+	create1.Completed:Connect(function() 
+		
+		if rot == 0 then rot = 180 elseif rot == 180 then rot = 0 end
+		completed()
+		
+	end)
+	
+	
+end
+coroutine.wrap(PRFCY_fake_script)()
+local function ZYSKNA_fake_script() -- PenumbraShadow_14.HoverStay 
+	local script = Instance.new('LocalScript', PenumbraShadow_14)
+
+	local button = script.Parent
+	local gradient = button.UIGradient
+	local ts = game:GetService("TweenService")
+	local ti = TweenInfo.new(2.5, Enum.EasingStyle.Linear, Enum.EasingDirection.Out)
+	local offset1 = {Offset = Vector2.new(-1, 0)}
+	local create1 = ts:Create(gradient, ti, offset1)
+	local startPos = Vector2.new(1, 0)
+	local rot = 180
+	
+	gradient.Offset = startPos
+	gradient.Rotation = 0
+	
+	
+		
+		button.BorderSizePixel = 2
+		create1:Play()
+	
+	
+	local function completed()
+			
+		if button.BorderSizePixel == 2 and rot == 0 then
+			
+			gradient.Rotation = 180
+			gradient.Offset = startPos
+			create1:Play()	
+			
+		elseif button.BorderSizePixel == 2 and rot == 180 then
+			
+			gradient.Rotation = 0
+			gradient.Offset = startPos
+			create1:Play()
+			
+		end
+			
+	end
+	
+	create1.Completed:Connect(function() 
+		
+		if rot == 0 then rot = 180 elseif rot == 180 then rot = 0 end
+		completed()
+		
+	end)
+	
+	
+end
+coroutine.wrap(ZYSKNA_fake_script)()
+local function SLCVG_fake_script() -- kps.LocalScript 
 	local script = Instance.new('LocalScript', kps)
 
 	addDrag = function(object)
@@ -1253,7 +1702,7 @@ local function MLWX_fake_script() -- kps.LocalScript
 	
 	
 end
-coroutine.wrap(MLWX_fake_script)()
+coroutine.wrap(SLCVG_fake_script)()
 end
 
 return util 

@@ -573,6 +573,49 @@ if getgenv().showms == true then
 		ping.Visible = false
 	end
   end
+	
+if getgenv().showfps == true then
+	fps.Visible = true
+  else
+	if getgenv().showfps == false then
+		fps.Visible = false
+	end
+  end
+
+  if getgenv().showkps == true then
+	kps.Visible = true
+  else
+	if getgenv().showkps == false then
+		kps.Visible = false
+	end
+  end
+
+
+  if getgenv().animated == true then
+	UIGradient.Enabled = true
+	UIGradient_2.Enabled = true
+	UIGradient_3.Enabled = true
+	UIGradient_4.Enabled = true
+	UIGradient_5.Enabled = true
+	UIGradient_6.Enabled = true
+	UIGradient_7.Enabled = true
+	UIGradient_8.Enabled = true
+	UIGradient_9.Enabled = true
+	UIGradient_10.Enabled = true
+  else
+	if getgenv().animated == false then
+		UIGradient.Enabled = false
+		UIGradient_2.Enabled = false
+	UIGradient_3.Enabled = false
+	UIGradient_4.Enabled = false
+	UIGradient_5.Enabled = false
+	UIGradient_6.Enabled = false
+	UIGradient_7.Enabled = false
+	UIGradient_8.Enabled = false
+	UIGradient_9.Enabled = false
+	UIGradient_10.Enabled = false
+	end
+  end
 
 -- Scripts:
 

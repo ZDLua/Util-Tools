@@ -581,14 +581,15 @@ if getgenv().showfps == true then
 		fps.Visible = false
 	end
   end
-
+	
   if getgenv().showkps == true then
-	kps.Visible = true
+	kps_2.Visible = true
   else
 	if getgenv().showkps == false then
-		kps.Visible = false
+		kps_2.Visible = false
 	end
   end
+
 
 
   if getgenv().animated == true then

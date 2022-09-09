@@ -565,6 +565,14 @@ if getgenv().backdrop == true then
 		MainShadow.ImageTransparency = 1
 	end
   end
+	
+if getgenv().showms == true then
+	ping.Visible = true
+  else
+	if getgenv().showms == false then
+		ping.Visible = false
+	end
+  end
 
 -- Scripts:
 

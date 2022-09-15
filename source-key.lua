@@ -70,6 +70,7 @@ util.createKeyStrokes = function()
     kps.Name = "kps"
     kps.Parent = game.CoreGui
     kps.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    kps.ResetOnSpawn = false     
     
     Main.Name = "Main"
     Main.Parent = kps
@@ -546,6 +547,7 @@ util.createKeyStrokes = function()
     plrms.LightInfluence = 1.000
     plrms.MaxDistance = 20.000
     plrms.Size = UDim2.new(0, 600, 0, 90)
+    plrms.ResetOnSpawn = false
     
     ping_2.Name = "ping"
     ping_2.Parent = plrms

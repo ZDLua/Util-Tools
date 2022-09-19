@@ -1279,7 +1279,9 @@ util.createKeyStrokes = function()
         
         
         while wait() do
+            if getgenv.fadekeys == true then
             if game:GetService("UserInputService"):IsKeyDown(keys.W) then
+               
                 tween:Create(script.Parent.Parent.wkey,TweenInfo.new(1),{TextColor3 = Color3.fromRGB(8, 8, 8)}):Play()
             else
                 tween:Create(script.Parent.Parent.wkey,TweenInfo.new(1),{TextColor3 = Color3.fromRGB(254, 252, 255)}):Play()
@@ -1343,7 +1345,78 @@ util.createKeyStrokes = function()
             else
                 tween:Create(script.Parent.Parent.rightarrow.arrowRight,TweenInfo.new(1),{ImageColor3 = Color3.fromRGB(254, 252, 255)}):Play()
             end
+        else
+            if getgenv.fadekeys == false then
+
+                if game:GetService("UserInputService"):IsKeyDown(keys.W) then
+               
+                    script.Parent.Parent.wkey.TextColor3 = Color3.fromRGB(8, 8, 8)
+                else
+                    script.Parent.Parent.wkey.TextColor3 = Color3.fromRGB(254, 252, 255)
+                   
+                end
+                if game:GetService("UserInputService"):IsKeyDown(keys.A) then
+                    script.Parent.Parent.akey.TextColor3 = Color3.fromRGB(8, 8, 8)
+                else
+                    script.Parent.Parent.akey.TextColor3 = Color3.fromRGB(254, 252, 255)
             
+                end
+                if game:GetService("UserInputService"):IsKeyDown(keys.S) then
+            
+                    script.Parent.Parent.skey.TextColor3 = Color3.fromRGB(8, 8, 8)
+                else
+                    script.Parent.Parent.skey.TextColor3 = Color3.fromRGB(254, 252, 255)
+                end
+                if game:GetService("UserInputService"):IsKeyDown(keys.D) then
+                    script.Parent.Parent.dkey.TextColor3 = Color3.fromRGB(8, 8, 8)
+                else
+                    script.Parent.Parent.dkey.TextColor3 = Color3.fromRGB(254, 252, 255)
+                end
+                if game:GetService("UserInputService"):IsKeyDown(keys.Space) then
+            
+                    script.Parent.Parent.spacekey.TextColor3 = Color3.fromRGB(8, 8, 8)
+                else
+                    script.Parent.Parent.spacekey.TextColor3 = Color3.fromRGB(254, 252, 255)
+                end
+                if game:GetService('UserInputService'):IsMouseButtonPressed(Enum.UserInputType.MouseButton1) then
+                    script.Parent.Parent.lmb.TextColor3 = Color3.fromRGB(8, 8, 8)
+                else
+                    script.Parent.Parent.lmb.TextColor3 = Color3.fromRGB(254, 252, 255)
+                end
+                if game:GetService('UserInputService'):IsMouseButtonPressed(Enum.UserInputType.MouseButton2) then
+                    script.Parent.Parent.rmb.TextColor3 = Color3.fromRGB(8, 8, 8)
+                else
+                    script.Parent.Parent.rmb.TextColor3 = Color3.fromRGB(254, 252, 255)
+                end
+                
+                
+                
+                
+                if game:GetService("UserInputService"):IsKeyDown(keys.Up) then
+                    tween:Create(script.Parent.Parent.uparrow.arrowUp,TweenInfo.new(1),{ImageColor3 = Color3.fromRGB(8, 8, 8)}):Play()
+                else
+                    tween:Create(script.Parent.Parent.uparrow.arrowUp,TweenInfo.new(1),{ImageColor3 = Color3.fromRGB(254, 252, 255)}):Play()
+                end
+                if game:GetService("UserInputService"):IsKeyDown(keys.Down) then
+                    tween:Create(script.Parent.Parent.downarrow.arrowDown,TweenInfo.new(1),{ImageColor3 = Color3.fromRGB(8, 8, 8)}):Play()
+                else
+                    tween:Create(script.Parent.Parent.downarrow.arrowDown,TweenInfo.new(1),{ImageColor3 = Color3.fromRGB(254, 252, 255)}):Play()
+            
+                end
+                if game:GetService("UserInputService"):IsKeyDown(keys.Left) then
+            
+                    tween:Create(script.Parent.Parent.leftarrow.arrowLeft,TweenInfo.new(1),{ImageColor3 = Color3.fromRGB(8, 8, 8)}):Play()
+                else
+                    tween:Create(script.Parent.Parent.leftarrow.arrowLeft,TweenInfo.new(1),{ImageColor3 = Color3.fromRGB(254, 252, 255)}):Play()
+                end
+                if game:GetService("UserInputService"):IsKeyDown(keys.Right) then
+                    tween:Create(script.Parent.Parent.rightarrow.arrowRight,TweenInfo.new(1),{ImageColor3 = Color3.fromRGB(8, 8, 8)}):Play()
+                else
+                    tween:Create(script.Parent.Parent.rightarrow.arrowRight,TweenInfo.new(1),{ImageColor3 = Color3.fromRGB(254, 252, 255)}):Play()
+                end
+
+            end
+                end
         end
         
     end

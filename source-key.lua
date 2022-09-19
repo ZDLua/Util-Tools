@@ -1279,7 +1279,7 @@ util.createKeyStrokes = function()
         
         
         while wait() do
-            if getgenv.fadekeys == true then
+            if getgenv().fadekeys == true then
             if game:GetService("UserInputService"):IsKeyDown(keys.W) then
                
                 tween:Create(script.Parent.Parent.wkey,TweenInfo.new(1),{TextColor3 = Color3.fromRGB(8, 8, 8)}):Play()
@@ -1346,7 +1346,7 @@ util.createKeyStrokes = function()
                 tween:Create(script.Parent.Parent.rightarrow.arrowRight,TweenInfo.new(1),{ImageColor3 = Color3.fromRGB(254, 252, 255)}):Play()
             end
         else
-            if getgenv.fadekeys == false then
+            if getgenv().fadekeys == false then
 
                 if game:GetService("UserInputService"):IsKeyDown(keys.W) then
                

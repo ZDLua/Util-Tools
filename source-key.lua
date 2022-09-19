@@ -1863,17 +1863,17 @@ util.createKeyStrokes = function()
             while wait() do
                 local Ping = tonumber(string.format("%.3f", GetPing()))
                 script.Parent.Text = Ping.." MS"
-                plrms.Text = Ping.." MS"
+                plrms.ping_2.Text = Ping.." MS"
                 if Ping <= 100 then
                     script.Parent.TextColor3 = Colors.Good
-                    plrms.TextColor3 = Colors.Good
+                    plrms.ping_2.TextColor3 = Colors.Good
                 elseif Ping > 199  then
                     script.Parent.TextColor3 = Colors.Normal
-                    plrms.TextColor3 = Colors.Normal
+                    plrms.ping_2.TextColor3 = Colors.Normal
         
                 elseif Ping > 900 then
                     script.Parent.TextColor3 = Colors.Bad
-                    plrms.TextColor3 = Colors.Bad
+                    plrms.ping_2.TextColor3 = Colors.Bad
                 end
             end
         end)

@@ -1393,26 +1393,26 @@ util.createKeyStrokes = function()
                 
                 
                 if game:GetService("UserInputService"):IsKeyDown(keys.Up) then
-                    tween:Create(script.Parent.Parent.uparrow.arrowUp,TweenInfo.new(1),{ImageColor3 = Color3.fromRGB(8, 8, 8)}):Play()
+                    script.Parent.Parent.uparrow.arrowUp.ImageColor3 = Color3.fromRGB(8, 8, 8)
                 else
-                    tween:Create(script.Parent.Parent.uparrow.arrowUp,TweenInfo.new(1),{ImageColor3 = Color3.fromRGB(254, 252, 255)}):Play()
+                    script.Parent.Parent.uparrow.arrowUp.ImageColor3 = Color3.fromRGB(254, 252, 255)
                 end
                 if game:GetService("UserInputService"):IsKeyDown(keys.Down) then
-                    tween:Create(script.Parent.Parent.downarrow.arrowDown,TweenInfo.new(1),{ImageColor3 = Color3.fromRGB(8, 8, 8)}):Play()
+                    script.Parent.Parent.downarrow.arrowDown.ImageColor3 = Color3.fromRGB(8, 8, 8)
                 else
-                    tween:Create(script.Parent.Parent.downarrow.arrowDown,TweenInfo.new(1),{ImageColor3 = Color3.fromRGB(254, 252, 255)}):Play()
+                    script.Parent.Parent.downarrow.arrowDown.ImageColor3 = Color3.fromRGB(254, 252, 255)
             
                 end
                 if game:GetService("UserInputService"):IsKeyDown(keys.Left) then
             
-                    tween:Create(script.Parent.Parent.leftarrow.arrowLeft,TweenInfo.new(1),{ImageColor3 = Color3.fromRGB(8, 8, 8)}):Play()
+                    script.Parent.Parent.leftarrow.arrowLeft.ImageColor3 = Color3.fromRGB(8, 8, 8)
                 else
-                    tween:Create(script.Parent.Parent.leftarrow.arrowLeft,TweenInfo.new(1),{ImageColor3 = Color3.fromRGB(254, 252, 255)}):Play()
+                    script.Parent.Parent.leftarrow.arrowLeft.ImageColor3 = Color3.fromRGB(254, 252, 255)
                 end
                 if game:GetService("UserInputService"):IsKeyDown(keys.Right) then
-                    tween:Create(script.Parent.Parent.rightarrow.arrowRight,TweenInfo.new(1),{ImageColor3 = Color3.fromRGB(8, 8, 8)}):Play()
+                    script.Parent.Parent.rightarrow.arrowRight.ImageColor3 = Color3.fromRGB(8, 8, 8)
                 else
-                    tween:Create(script.Parent.Parent.rightarrow.arrowRight,TweenInfo.new(1),{ImageColor3 = Color3.fromRGB(254, 252, 255)}):Play()
+                    script.Parent.Parent.rightarrow.arrowRight.ImageColor3 = Color3.fromRGB(254, 252, 255)
                 end
 
             end

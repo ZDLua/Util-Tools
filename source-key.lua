@@ -1829,14 +1829,10 @@ util.createKeyStrokes = function()
         
         addDrag(script.Parent.Main)
         
-        
-        while wait(.01) do
-            local part = Instance.new	('Part')
-            part.Parent = game.Workspace
-        end
+     
         
         
-        
+  
         
     end
     coroutine.wrap(OQUZ_fake_script)()
